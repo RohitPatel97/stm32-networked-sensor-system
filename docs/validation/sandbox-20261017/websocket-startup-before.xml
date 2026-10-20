@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="1.145" timestamp="2026-10-17T11:26:46.074537-07:00" hostname="RohitGamingPC2"><testcase classname="tests.integration.test_websocket_startup" name="test_frame_during_initial_snapshot_is_delivered" time="0.553"><failure message="TimeoutError">fut = &lt;coroutine object Event.wait at 0x000001CC388867A0&gt;, timeout = 0.5
+
+    async def wait_for(fut, timeout):
+        """Wait for the single Future or coroutine to complete, with timeout.
+    
+        Coroutine will be wrapped in Task.
+    
+        Returns result of the Future or coroutine.  When a timeout occurs,
+        it cancels the task and raises TimeoutError.  To avoid the task
+        cancellation, wrap it in shield().
+    
+        If the wait is cancelled, the task is also cancelled.
+    
+        If the task suppresses the cancellation and returns a value instead,
+        that value is returned.
+    
+        This function is a coroutine.
+        """
+        # The special case for timeout &lt;= 0 is for the following case:
+        #
+        # async def test_waitfor():
+        #     func_started = False
+        #
+        #     async def func():
+        #         nonlocal func_started
+        #         func_started = True
+        #
+        #     try:
+        #         await asyncio.wait_for(func(), 0)
+        #     except asyncio.TimeoutError:
+        #         assert not func_started
+        #     else:
+        #         assert False
+        #
+        # asyncio.run(test_waitfor())
+    
+    
+        if timeout is not None and timeout &lt;= 0:
+            fut = ensure_future(fut)
+    
+            if fut.done():
+                return fut.result()
+    
+            await _cancel_and_wait(fut)
+            try:
+                return fut.result()
+            except exceptions.CancelledError as exc:
+                raise TimeoutError from exc
+    
+        async with timeouts.timeout(timeout):
+&gt;           return await fut
+                   ^^^^^^^^^
+
+C:\Users\sr116\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\tasks.py:520: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;asyncio.locks.Event object at 0x000001CC3886A600 [unset]&gt;
+
+    async def wait(self):
+        """Block until the internal flag is true.
+    
+        If the internal flag is true on entry, return True
+        immediately.  Otherwise, block until another coroutine calls
+        set() to set the flag to true, then return True.
+        """
+        if self._value:
+            return True
+    
+        fut = self._get_loop().create_future()
+        self._waiters.append(fut)
+        try:
+&gt;           await fut
+E           asyncio.exceptions.CancelledError
+
+C:\Users\sr116\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\locks.py:212: CancelledError
+
+The above exception was the direct cause of the following exception:
+
+compiled_frames = &lt;function compiled_frames.&lt;locals&gt;.generate at 0x000001CC388702C0&gt;
+tmp_path = WindowsPath('C:/Users/sr116/AppData/Local/Temp/pytest-of-sr116/pytest-25/test_frame_during_initial_snap0')
+
+    def test_frame_during_initial_snapshot_is_delivered(compiled_frames, tmp_path):
+        frame = compiled_frames("--duration-ms", "100")[0]
+    
+        class SingleFrameSource(TelemetrySource):
+            name = "socket-startup-test"
+    
+            async def chunks(self, stop):
+                yield json.dumps(frame).encode() + b"\n"
+    
+        async def scenario():
+            app = create_app(Settings(log_dir=tmp_path), SingleFrameSource())
+            endpoint = next(r.endpoint for r in app.routes if r.path == "/ws/telemetry")
+            events = []
+            snapshot_sent = asyncio.Event()
+            telemetry_sent = asyncio.Event()
+    
+            class DelayedTransport:
+                async def accept(self):
+                    pass
+    
+                async def send_json(self, event):
+                    events.append(event)
+                    if event["type"] == "snapshot":
+                        # Real ASGI sends can yield while the independent producer runs.
+                        await app.state.hub.run()
+                        snapshot_sent.set()
+                    elif event["type"] == "telemetry":
+                        telemetry_sent.set()
+                        raise WebSocketDisconnect()
+    
+            task = asyncio.create_task(endpoint(DelayedTransport()))
+            try:
+                await asyncio.wait_for(snapshot_sent.wait(), timeout=2)
+                assert events[0]["stats"]["frames_accepted"] == 0
+                assert app.state.hub.stats().frames_accepted == 1
+                await asyncio.wait_for(telemetry_sent.wait(), timeout=0.5)
+                assert events[1]["reading"]["sequence"] == 0
+            finally:
+                task.cancel()
+                await asyncio.gather(task, return_exceptions=True)
+            assert app.state.hub.stats().websocket_clients == 0
+    
+&gt;       asyncio.run(scenario())
+
+tests\integration\test_websocket_startup.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\sr116\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:195: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+C:\Users\sr116\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\sr116\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+tests\integration\test_websocket_startup.py:47: in scenario
+    await asyncio.wait_for(telemetry_sent.wait(), timeout=0.5)
+C:\Users\sr116\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\tasks.py:519: in wait_for
+    async with timeouts.timeout(timeout):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;Timeout [expired]&gt;
+exc_type = &lt;class 'asyncio.exceptions.CancelledError'&gt;
+exc_val = CancelledError(), exc_tb = &lt;traceback object at 0x000001CC38892DC0&gt;
+
+    async def __aexit__(
+        self,
+        exc_type: Optional[Type[BaseException]],
+        exc_val: Optional[BaseException],
+        exc_tb: Optional[TracebackType],
+    ) -&gt; Optional[bool]:
+        assert self._state in (_State.ENTERED, _State.EXPIRING)
+    
+        if self._timeout_handler is not None:
+            self._timeout_handler.cancel()
+            self._timeout_handler = None
+    
+        if self._state is _State.EXPIRING:
+            self._state = _State.EXPIRED
+    
+            if self._task.uncancel() &lt;= self._cancelling and exc_type is exceptions.CancelledError:
+                # Since there are no new cancel requests, we're
+                # handling this.
+&gt;               raise TimeoutError from exc_val
+E               TimeoutError
+
+C:\Users\sr116\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\timeouts.py:115: TimeoutError</failure></testcase></testsuite></testsuites>

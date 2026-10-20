@@ -1,0 +1,138 @@
+{
+  "status": "passed",
+  "demonstration_report": "20261020T173704-c6e8f72f",
+  "checked_at": "2026-10-20T17:37:24.2193244Z",
+  "injected_record": {
+    "schema_version": 3,
+    "boot_id": "3",
+    "device_id": "stm32-d97822656f7ffa6783d45bbd-0",
+    "sequence": 707,
+    "uptime_ms": 70801,
+    "temperature_c": 25.08,
+    "pressure_hpa": 1006.53,
+    "accel_g": [
+      0.5,
+      -0.25,
+      0.75
+    ],
+    "battery_v": null,
+    "i2c_errors": 0,
+    "queue_drops": 0,
+    "watchdog_resets": null,
+    "firmware": {
+      "schema_version": 3,
+      "type": "telemetry",
+      "device_id": "stm32-d97822656f7ffa6783d45bbd-0",
+      "boot_id": 3,
+      "frame_seq": 707,
+      "uptime_ms": 70801,
+      "seq": 7150,
+      "ts_us": 70796000,
+      "sample_present": true,
+      "sensors": {
+        "mpu6050": "online",
+        "bmp280": "online"
+      },
+      "imu": {
+        "accel_g": [
+          0.5,
+          -0.25,
+          0.75
+        ],
+        "gyro_dps": [
+          5.0,
+          -20.0,
+          10.0
+        ],
+        "temperature_c": 36.53
+      },
+      "baro": {
+        "temperature_c": 25.08,
+        "pressure_pa": 100653.0,
+        "altitude_m": 56.1
+      },
+      "health": {
+        "i2c_retries": 0,
+        "i2c_errors": 0,
+        "queue_drops": 0,
+        "deadline_misses": 0,
+        "watchdog": "fed",
+        "watchdog_enabled": true,
+        "reset_flags": 234881024
+      },
+      "timing": {
+        "acquisition_us": 35,
+        "processing_us": 7
+      }
+    },
+    "received_at": "2026-10-20T17:37:04.263193Z"
+  },
+  "later_live_record": [
+    {
+      "schema_version": 3,
+      "boot_id": "3",
+      "device_id": "stm32-d97822656f7ffa6783d45bbd-0",
+      "sequence": 906,
+      "uptime_ms": 90701,
+      "temperature_c": 25.08,
+      "pressure_hpa": 1006.53,
+      "accel_g": [
+        0.5,
+        -0.25,
+        0.75
+      ],
+      "battery_v": null,
+      "i2c_errors": 0,
+      "queue_drops": 0,
+      "watchdog_resets": null,
+      "firmware": {
+        "schema_version": 3,
+        "type": "telemetry",
+        "device_id": "stm32-d97822656f7ffa6783d45bbd-0",
+        "boot_id": 3,
+        "frame_seq": 906,
+        "uptime_ms": 90701,
+        "seq": 9160,
+        "ts_us": 90696000,
+        "sample_present": true,
+        "sensors": {
+          "mpu6050": "online",
+          "bmp280": "online"
+        },
+        "imu": {
+          "accel_g": [
+            0.5,
+            -0.25,
+            0.75
+          ],
+          "gyro_dps": [
+            5.0,
+            -20.0,
+            10.0
+          ],
+          "temperature_c": 36.53
+        },
+        "baro": {
+          "temperature_c": 25.08,
+          "pressure_pa": 100653.0,
+          "altitude_m": 56.1
+        },
+        "health": {
+          "i2c_retries": 0,
+          "i2c_errors": 0,
+          "queue_drops": 0,
+          "deadline_misses": 0,
+          "watchdog": "fed",
+          "watchdog_enabled": true,
+          "reset_flags": 234881024
+        },
+        "timing": {
+          "acquisition_us": 35,
+          "processing_us": 7
+        }
+      },
+      "received_at": "2026-10-20T17:37:24.162932Z"
+    }
+  ],
+  "held_for_seconds": 19.899739
+}

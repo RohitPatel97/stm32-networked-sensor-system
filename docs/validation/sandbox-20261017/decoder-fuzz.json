@@ -1,0 +1,9 @@
+{
+  "seed": 20261017,
+  "cases": 5000,
+  "accepted_records": 5000,
+  "rejected_records": 21560,
+  "valid_tail_recovery_cases": 5000,
+  "buffer_limit_bytes": 2048,
+  "passed": true
+}

@@ -1,0 +1,81 @@
+{
+  "samples": [
+    {
+      "cycle": 25,
+      "python_bytes": 2719927,
+      "threads": 1,
+      "working_set": 63700992,
+      "private_bytes": 48566272,
+      "handles": 237
+    },
+    {
+      "cycle": 50,
+      "python_bytes": 5391315,
+      "threads": 1,
+      "working_set": 70221824,
+      "private_bytes": 55861248,
+      "handles": 237
+    },
+    {
+      "cycle": 75,
+      "python_bytes": 8087470,
+      "threads": 1,
+      "working_set": 77598720,
+      "private_bytes": 63275008,
+      "handles": 237
+    },
+    {
+      "cycle": 100,
+      "python_bytes": 10728285,
+      "threads": 1,
+      "working_set": 83689472,
+      "private_bytes": 69271552,
+      "handles": 237
+    },
+    {
+      "cycle": 125,
+      "python_bytes": 13368510,
+      "threads": 1,
+      "working_set": 91717632,
+      "private_bytes": 77230080,
+      "handles": 237
+    },
+    {
+      "cycle": 150,
+      "python_bytes": 16119137,
+      "threads": 1,
+      "working_set": 98004992,
+      "private_bytes": 83402752,
+      "handles": 237
+    },
+    {
+      "cycle": 175,
+      "python_bytes": 18759973,
+      "threads": 1,
+      "working_set": 104693760,
+      "private_bytes": 91217920,
+      "handles": 237
+    },
+    {
+      "cycle": 200,
+      "python_bytes": 21398950,
+      "threads": 1,
+      "working_set": 110075904,
+      "private_bytes": 96526336,
+      "handles": 237
+    }
+  ],
+  "top_growth": [
+    "C:\\Users\\sr116\\Desktop\\Resume\\Projects\\stm32-networked-sensor-system\\.venv\\Lib\\site-packages\\fastapi\\routing.py:1066: size=2883 KiB (+2883 KiB), count=5400 (+5400), average=547 B",
+    "C:\\Users\\sr116\\Desktop\\Resume\\Projects\\stm32-networked-sensor-system\\.venv\\Lib\\site-packages\\fastapi\\routing.py:1265: size=1406 KiB (+1406 KiB), count=36000 (+36000), average=40 B",
+    "C:\\Users\\sr116\\Desktop\\Resume\\Projects\\stm32-networked-sensor-system\\.venv\\Lib\\site-packages\\pydantic\\fields.py:452: size=1012 KiB (+1012 KiB), count=4800 (+4800), average=216 B",
+    "C:\\Users\\sr116\\Desktop\\Resume\\Projects\\stm32-networked-sensor-system\\.venv\\Lib\\site-packages\\pydantic\\fields.py:354: size=781 KiB (+781 KiB), count=2000 (+2000), average=400 B",
+    "C:\\Users\\sr116\\Desktop\\Resume\\Projects\\stm32-networked-sensor-system\\.venv\\Lib\\site-packages\\fastapi\\routing.py:416: size=759 KiB (+759 KiB), count=5400 (+5400), average=144 B",
+    "C:\\Users\\sr116\\Desktop\\Resume\\Projects\\stm32-networked-sensor-system\\.venv\\Lib\\site-packages\\pydantic\\fields.py:488: size=619 KiB (+619 KiB), count=2400 (+2400), average=264 B",
+    "C:\\Users\\sr116\\Desktop\\Resume\\Projects\\stm32-networked-sensor-system\\.venv\\Lib\\site-packages\\pydantic\\plugin\\_schema_validator.py:53: size=555 KiB (+555 KiB), count=5800 (+5800), average=98 B",
+    "C:\\Users\\sr116\\Desktop\\Resume\\Projects\\stm32-networked-sensor-system\\.venv\\Lib\\site-packages\\fastapi\\routing.py:141: size=548 KiB (+548 KiB), count=5400 (+5400), average=104 B",
+    "C:\\Users\\sr116\\Desktop\\Resume\\Projects\\stm32-networked-sensor-system\\gateway\\src\\sensor_monitor\\sources.py:46: size=498 KiB (+498 KiB), count=200 (+200), average=2552 B",
+    "C:\\Users\\sr116\\Desktop\\Resume\\Projects\\stm32-networked-sensor-system\\.venv\\Lib\\site-packages\\fastapi\\routing.py:1054: size=457 KiB (+457 KiB), count=3600 (+3600), average=130 B"
+  ],
+  "scope": "200 application-factory lifecycles after 10 warmup cycles; no server or clients; continuous tracemalloc"
+}

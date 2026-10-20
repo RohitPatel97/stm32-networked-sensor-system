@@ -1,0 +1,14 @@
+{
+  "rest_openapi_unchanged": true,
+  "paths": [
+    "/api/v1/alerts",
+    "/api/v1/devices",
+    "/api/v1/devices/{device_id}",
+    "/api/v1/devices/{device_id}/readings",
+    "/api/v1/simulator/fault",
+    "/api/v1/snapshot",
+    "/api/v1/stats",
+    "/healthz"
+  ],
+  "scope": "Compare pre-stress sandbox and fixed factory OpenAPI documents"
+}

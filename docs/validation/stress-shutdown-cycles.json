@@ -1,0 +1,60 @@
+{
+  "cycles": [
+    {
+      "cycle": 1,
+      "tasks": 1,
+      "threads": 1,
+      "working_set": 71806976,
+      "private_bytes": 52346880,
+      "handles": 291
+    },
+    {
+      "cycle": 2,
+      "tasks": 1,
+      "threads": 1,
+      "working_set": 72826880,
+      "private_bytes": 51290112,
+      "handles": 291
+    },
+    {
+      "cycle": 3,
+      "tasks": 1,
+      "threads": 1,
+      "working_set": 74039296,
+      "private_bytes": 52584448,
+      "handles": 291
+    },
+    {
+      "cycle": 4,
+      "tasks": 1,
+      "threads": 1,
+      "working_set": 74739712,
+      "private_bytes": 53415936,
+      "handles": 291
+    },
+    {
+      "cycle": 5,
+      "tasks": 1,
+      "threads": 1,
+      "working_set": 76009472,
+      "private_bytes": 54894592,
+      "handles": 291
+    },
+    {
+      "cycle": 6,
+      "tasks": 1,
+      "threads": 1,
+      "working_set": 76713984,
+      "private_bytes": 55787520,
+      "handles": 291
+    }
+  ],
+  "checks": {
+    "only_controller_task_remains": true,
+    "no_handle_accumulation": true,
+    "no_thread_accumulation": true,
+    "working_set_growth_bounded": true
+  },
+  "passed": true,
+  "scope": "six independent start/stop cycles in one event loop; post-GC resources, not the short-run memory slope gates"
+}

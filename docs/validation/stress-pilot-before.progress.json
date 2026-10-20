@@ -1,0 +1,15 @@
+{
+  "elapsed": 0.5,
+  "frames": 0,
+  "boots": 0,
+  "reconnects": 0,
+  "fast_consumed": 0,
+  "fast_order_errors": 0,
+  "ws_events": 0,
+  "ws_order_errors": 0,
+  "ws_connections": 0,
+  "ws_failures": 0,
+  "outages": 0,
+  "recoveries": 0,
+  "http_checks": 0
+}

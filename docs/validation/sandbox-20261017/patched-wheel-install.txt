@@ -1,0 +1,7 @@
+Processing c:\users\sr116\desktop\resume\projects\stm32-networked-sensor-system\build\sandbox-20261017-rxotbc23\evidence\patched-wheel\stm32_sensor_gateway-3.0.0-py3-none-any.whl
+Installing collected packages: stm32-sensor-gateway
+  Attempting uninstall: stm32-sensor-gateway
+    Found existing installation: stm32-sensor-gateway 3.0.0
+    Uninstalling stm32-sensor-gateway-3.0.0:
+      Successfully uninstalled stm32-sensor-gateway-3.0.0
+Successfully installed stm32-sensor-gateway-3.0.0

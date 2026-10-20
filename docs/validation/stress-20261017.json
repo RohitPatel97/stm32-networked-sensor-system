@@ -1,0 +1,630 @@
+{
+  "started_at": "2026-10-17T19:07:35.030187+00:00",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "duration_requested": 600.0,
+  "warmup_seconds": 60.0,
+  "requested_frame_pacing_hz": 200.0,
+  "first_boot": "9007199254741093",
+  "metrics": {
+    "fast_consumed": 50880,
+    "fast_order_errors": 0,
+    "ws_events": 58940,
+    "ws_order_errors": 0,
+    "ws_connections": 2688,
+    "ws_failures": 0,
+    "outages": 12720,
+    "recoveries": 17808,
+    "http_checks": 54
+  },
+  "elapsed_seconds": 600.0283505999996,
+  "frames": 50880,
+  "boots": 848,
+  "effective_frames_per_second": 84.79599330452042,
+  "stats": {
+    "started_at": "2026-10-17T19:07:35.030187Z",
+    "frames_received": 52194,
+    "frames_accepted": 50880,
+    "parse_errors": 101,
+    "sequence_anomalies": 1213,
+    "session_changes": 847,
+    "device_rejections": 0,
+    "websocket_clients": 3,
+    "websocket_drops": 50816,
+    "source_reconnects": 1472
+  },
+  "samples": [
+    {
+      "elapsed": 60.094950900000185,
+      "python_bytes": 6022380,
+      "tasks": 10,
+      "threads": 1,
+      "working_set": 81170432,
+      "private_bytes": 60211200,
+      "handles": 305
+    },
+    {
+      "elapsed": 70.05836549999913,
+      "python_bytes": 6210982,
+      "tasks": 12,
+      "threads": 1,
+      "working_set": 81596416,
+      "private_bytes": 62152704,
+      "handles": 309
+    },
+    {
+      "elapsed": 80.05981690000044,
+      "python_bytes": 6062327,
+      "tasks": 10,
+      "threads": 1,
+      "working_set": 81215488,
+      "private_bytes": 61603840,
+      "handles": 307
+    },
+    {
+      "elapsed": 90.05162679999921,
+      "python_bytes": 6073551,
+      "tasks": 10,
+      "threads": 1,
+      "working_set": 80695296,
+      "private_bytes": 61030400,
+      "handles": 305
+    },
+    {
+      "elapsed": 100.06789690000005,
+      "python_bytes": 6054024,
+      "tasks": 10,
+      "threads": 1,
+      "working_set": 80969728,
+      "private_bytes": 61382656,
+      "handles": 305
+    },
+    {
+      "elapsed": 110.03266369999983,
+      "python_bytes": 6070391,
+      "tasks": 10,
+      "threads": 1,
+      "working_set": 81076224,
+      "private_bytes": 61267968,
+      "handles": 307
+    },
+    {
+      "elapsed": 120.03451789999963,
+      "python_bytes": 6218309,
+      "tasks": 12,
+      "threads": 1,
+      "working_set": 81510400,
+      "private_bytes": 61792256,
+      "handles": 309
+    },
+    {
+      "elapsed": 130.05571210000016,
+      "python_bytes": 6065972,
+      "tasks": 10,
+      "threads": 1,
+      "working_set": 81121280,
+      "private_bytes": 61251584,
+      "handles": 301
+    },
+    {
+      "elapsed": 140.04994110000007,
+      "python_bytes": 6068546,
+      "tasks": 10,
+      "threads": 1,
+      "working_set": 81342464,
+      "private_bytes": 61976576,
+      "handles": 297
+    },
+    {
+      "elapsed": 150.03114780000033,
+      "python_bytes": 6083214,
+      "tasks": 10,
+      "threads": 1,
+      "working_set": 81219584,
+      "private_bytes": 61603840,
+      "handles": 297
+    },
+    {
+      "elapsed": 160.02937650000058,
+      "python_bytes": 6239993,
+      "tasks": 12,
+      "threads": 1,
+      "working_set": 80887808,
+      "private_bytes": 60243968,
+      "handles": 301
+    },
+    {
+      "elapsed": 170.0658311999996,
+      "python_bytes": 6086465,
+      "tasks": 10,
+      "threads": 1,
+      "working_set": 81440768,
+      "private_bytes": 61837312,
+      "handles": 297
+    },
+    {
+      "elapsed": 180.02909360000012,
+      "python_bytes": 6089060,
+      "tasks": 11,
+      "threads": 1,
+      "working_set": 80879616,
+      "private_bytes": 60624896,
+      "handles": 297
+    },
+    {
+      "elapsed": 190.02634729999954,
+      "python_bytes": 6074106,
+      "tasks": 11,
+      "threads": 1,
+      "working_set": 80818176,
+      "private_bytes": 60653568,
+      "handles": 296
+    },
+    {
+      "elapsed": 200.03114979999918,
+      "python_bytes": 6082529,
+      "tasks": 10,
+      "threads": 1,
+      "working_set": 81457152,
+      "private_bytes": 61878272,
+      "handles": 297
+    },
+    {
+      "elapsed": 210.05040290000034,
+      "python_bytes": 6078962,
+      "tasks": 10,
+      "threads": 1,
+      "working_set": 81207296,
+      "private_bytes": 61186048,
+      "handles": 297
+    },
+    {
+      "elapsed": 220.04920019999918,
+      "python_bytes": 6093667,
+      "tasks": 10,
+      "threads": 1,
+      "working_set": 81469440,
+      "private_bytes": 61497344,
+      "handles": 297
+    },
+    {
+      "elapsed": 230.0624229999994,
+      "python_bytes": 6233391,
+      "tasks": 10,
+      "threads": 1,
+      "working_set": 81821696,
+      "private_bytes": 62230528,
+      "handles": 299
+    },
+    {
+      "elapsed": 240.05733959999998,
+      "python_bytes": 6097589,
+      "tasks": 10,
+      "threads": 1,
+      "working_set": 81895424,
+      "private_bytes": 63561728,
+      "handles": 297
+    },
+    {
+      "elapsed": 250.05136560000028,
+      "python_bytes": 6093972,
+      "tasks": 10,
+      "threads": 1,
+      "working_set": 81530880,
+      "private_bytes": 61763584,
+      "handles": 297
+    },
+    {
+      "elapsed": 260.0656048000001,
+      "python_bytes": 6236643,
+      "tasks": 12,
+      "threads": 1,
+      "working_set": 81289216,
+      "private_bytes": 61652992,
+      "handles": 303
+    },
+    {
+      "elapsed": 270.04910159999963,
+      "python_bytes": 6108694,
+      "tasks": 11,
+      "threads": 1,
+      "working_set": 81256448,
+      "private_bytes": 61014016,
+      "handles": 299
+    },
+    {
+      "elapsed": 280.06461689999924,
+      "python_bytes": 6085973,
+      "tasks": 10,
+      "threads": 1,
+      "working_set": 81338368,
+      "private_bytes": 61853696,
+      "handles": 297
+    },
+    {
+      "elapsed": 290.0514605999997,
+      "python_bytes": 6094030,
+      "tasks": 10,
+      "threads": 1,
+      "working_set": 81522688,
+      "private_bytes": 62840832,
+      "handles": 297
+    },
+    {
+      "elapsed": 300.04818239999986,
+      "python_bytes": 6100650,
+      "tasks": 10,
+      "threads": 1,
+      "working_set": 81731584,
+      "private_bytes": 62218240,
+      "handles": 298
+    },
+    {
+      "elapsed": 310.06671689999894,
+      "python_bytes": 6102470,
+      "tasks": 10,
+      "threads": 1,
+      "working_set": 81633280,
+      "private_bytes": 61952000,
+      "handles": 296
+    },
+    {
+      "elapsed": 320.024531699999,
+      "python_bytes": 6092786,
+      "tasks": 11,
+      "threads": 1,
+      "working_set": 81698816,
+      "private_bytes": 61222912,
+      "handles": 296
+    },
+    {
+      "elapsed": 330.0605431999993,
+      "python_bytes": 6097447,
+      "tasks": 10,
+      "threads": 1,
+      "working_set": 81432576,
+      "private_bytes": 61562880,
+      "handles": 295
+    },
+    {
+      "elapsed": 340.03531119999934,
+      "python_bytes": 6089362,
+      "tasks": 10,
+      "threads": 1,
+      "working_set": 81301504,
+      "private_bytes": 60878848,
+      "handles": 296
+    },
+    {
+      "elapsed": 350.0663416999996,
+      "python_bytes": 6089572,
+      "tasks": 10,
+      "threads": 1,
+      "working_set": 81276928,
+      "private_bytes": 61612032,
+      "handles": 296
+    },
+    {
+      "elapsed": 360.02639439999984,
+      "python_bytes": 6246062,
+      "tasks": 12,
+      "threads": 1,
+      "working_set": 81555456,
+      "private_bytes": 62054400,
+      "handles": 300
+    },
+    {
+      "elapsed": 370.0626420999997,
+      "python_bytes": 6099427,
+      "tasks": 10,
+      "threads": 1,
+      "working_set": 81731584,
+      "private_bytes": 62566400,
+      "handles": 296
+    },
+    {
+      "elapsed": 380.05204070000036,
+      "python_bytes": 6103503,
+      "tasks": 10,
+      "threads": 1,
+      "working_set": 81530880,
+      "private_bytes": 61640704,
+      "handles": 296
+    },
+    {
+      "elapsed": 390.02824299999884,
+      "python_bytes": 6106905,
+      "tasks": 10,
+      "threads": 1,
+      "working_set": 81555456,
+      "private_bytes": 61165568,
+      "handles": 296
+    },
+    {
+      "elapsed": 400.0513824999998,
+      "python_bytes": 6109651,
+      "tasks": 10,
+      "threads": 1,
+      "working_set": 81399808,
+      "private_bytes": 61251584,
+      "handles": 296
+    },
+    {
+      "elapsed": 410.0315587999994,
+      "python_bytes": 6094033,
+      "tasks": 10,
+      "threads": 1,
+      "working_set": 81489920,
+      "private_bytes": 61022208,
+      "handles": 298
+    },
+    {
+      "elapsed": 420.05917149999914,
+      "python_bytes": 6093903,
+      "tasks": 10,
+      "threads": 1,
+      "working_set": 81080320,
+      "private_bytes": 60444672,
+      "handles": 295
+    },
+    {
+      "elapsed": 430.0674254000005,
+      "python_bytes": 6244026,
+      "tasks": 13,
+      "threads": 1,
+      "working_set": 81547264,
+      "private_bytes": 61763584,
+      "handles": 299
+    },
+    {
+      "elapsed": 440.0658511999991,
+      "python_bytes": 6256607,
+      "tasks": 12,
+      "threads": 1,
+      "working_set": 81182720,
+      "private_bytes": 60559360,
+      "handles": 300
+    },
+    {
+      "elapsed": 450.0264195999989,
+      "python_bytes": 6098151,
+      "tasks": 11,
+      "threads": 1,
+      "working_set": 81457152,
+      "private_bytes": 60977152,
+      "handles": 295
+    },
+    {
+      "elapsed": 460.04717659999915,
+      "python_bytes": 6097685,
+      "tasks": 10,
+      "threads": 1,
+      "working_set": 81330176,
+      "private_bytes": 60936192,
+      "handles": 296
+    },
+    {
+      "elapsed": 470.0697101000005,
+      "python_bytes": 6266635,
+      "tasks": 13,
+      "threads": 1,
+      "working_set": 81772544,
+      "private_bytes": 61603840,
+      "handles": 300
+    },
+    {
+      "elapsed": 480.0553196000001,
+      "python_bytes": 6113570,
+      "tasks": 10,
+      "threads": 1,
+      "working_set": 81272832,
+      "private_bytes": 61014016,
+      "handles": 296
+    },
+    {
+      "elapsed": 490.0289510999992,
+      "python_bytes": 6105307,
+      "tasks": 10,
+      "threads": 1,
+      "working_set": 81526784,
+      "private_bytes": 60956672,
+      "handles": 296
+    },
+    {
+      "elapsed": 500.029301999999,
+      "python_bytes": 6099171,
+      "tasks": 10,
+      "threads": 1,
+      "working_set": 81166336,
+      "private_bytes": 61026304,
+      "handles": 296
+    },
+    {
+      "elapsed": 510.0460382000001,
+      "python_bytes": 6115776,
+      "tasks": 10,
+      "threads": 1,
+      "working_set": 81489920,
+      "private_bytes": 61288448,
+      "handles": 296
+    },
+    {
+      "elapsed": 520.0345235999994,
+      "python_bytes": 6265802,
+      "tasks": 12,
+      "threads": 1,
+      "working_set": 81715200,
+      "private_bytes": 61743104,
+      "handles": 300
+    },
+    {
+      "elapsed": 530.0570790000002,
+      "python_bytes": 6119174,
+      "tasks": 11,
+      "threads": 1,
+      "working_set": 81461248,
+      "private_bytes": 61341696,
+      "handles": 298
+    },
+    {
+      "elapsed": 540.0529924000002,
+      "python_bytes": 6391522,
+      "tasks": 11,
+      "threads": 1,
+      "working_set": 83480576,
+      "private_bytes": 64004096,
+      "handles": 302
+    },
+    {
+      "elapsed": 550.0588886999994,
+      "python_bytes": 6127746,
+      "tasks": 10,
+      "threads": 1,
+      "working_set": 81756160,
+      "private_bytes": 61718528,
+      "handles": 296
+    },
+    {
+      "elapsed": 560.0286531999991,
+      "python_bytes": 6103570,
+      "tasks": 11,
+      "threads": 1,
+      "working_set": 81309696,
+      "private_bytes": 61366272,
+      "handles": 296
+    },
+    {
+      "elapsed": 570.0623443999993,
+      "python_bytes": 6128025,
+      "tasks": 10,
+      "threads": 1,
+      "working_set": 81739776,
+      "private_bytes": 61505536,
+      "handles": 296
+    },
+    {
+      "elapsed": 580.0355875000005,
+      "python_bytes": 6107646,
+      "tasks": 10,
+      "threads": 1,
+      "working_set": 81215488,
+      "private_bytes": 60743680,
+      "handles": 296
+    },
+    {
+      "elapsed": 590.0587756000004,
+      "python_bytes": 6261595,
+      "tasks": 12,
+      "threads": 1,
+      "working_set": 81727488,
+      "private_bytes": 61415424,
+      "handles": 299
+    }
+  ],
+  "growth": {
+    "python_bytes": {
+      "first_window_median": 6066359.0,
+      "last_window_median": 6127885.5,
+      "window_growth": 61526.5,
+      "maximum": 6391522,
+      "minimum": 6022380,
+      "slope_per_minute": 9580.942223117785
+    },
+    "private_bytes": {
+      "first_window_median": 61325312.0,
+      "last_window_median": 61460480.0,
+      "window_growth": 135168.0,
+      "maximum": 64004096,
+      "minimum": 60211200,
+      "slope_per_minute": 956.9314776675125
+    },
+    "working_set": {
+      "first_window_median": 81123328.0,
+      "last_window_median": 81733632.0,
+      "window_growth": 610304.0,
+      "maximum": 83480576,
+      "minimum": 80695296,
+      "slope_per_minute": 61436.11940424062
+    },
+    "handles": {
+      "first_window_median": 306.0,
+      "last_window_median": 296.0,
+      "window_growth": -10.0,
+      "maximum": 309,
+      "minimum": 295,
+      "slope_per_minute": -0.7707138289637959
+    },
+    "tasks": {
+      "first_window_median": 10.0,
+      "last_window_median": 10.5,
+      "window_growth": 0.5,
+      "maximum": 13,
+      "minimum": 10,
+      "slope_per_minute": 0.047112520973484784
+    },
+    "threads": {
+      "first_window_median": 1.0,
+      "last_window_median": 1.0,
+      "window_growth": 0.0,
+      "maximum": 1,
+      "minimum": 1,
+      "slope_per_minute": 0.0
+    }
+  },
+  "checks": {
+    "scheduled_duration_completed": true,
+    "all_fresh_frames_accepted": true,
+    "fast_subscriber_complete_and_ordered": true,
+    "only_injected_sequence_rejections": true,
+    "only_injected_parse_errors": true,
+    "all_reboots_observed": true,
+    "reconnect_count_matches": true,
+    "no_device_rejections": true,
+    "websocket_reconnects_succeeded": true,
+    "persistent_websocket_ordered": true,
+    "history_bounded": true,
+    "latest_boot_retained": true,
+    "sensor_outage_and_recovery_seen": true,
+    "slow_drop_count_matches": true,
+    "slow_queue_retains_latest": true,
+    "slow_queue_join_completes": true,
+    "python_growth_bounded": true,
+    "python_slope_bounded": true,
+    "rss_growth_bounded": true,
+    "handle_growth_bounded": true,
+    "task_growth_bounded": true,
+    "simulator_child_reaped": true,
+    "private_memory_growth_bounded": true,
+    "private_memory_slope_bounded": true,
+    "subscribers_released": true
+  },
+  "passed": true,
+  "subscribers_after_shutdown": 0,
+  "resources_after_shutdown": {
+    "threads": 1,
+    "working_set": 85180416,
+    "private_bytes": 64765952,
+    "handles": 355
+  },
+  "source_sha256": {
+    "scripts/stress_test.py": "4ce7e11c7b9849015d965c4efab29090e2173f293935777b7ee3eaeb30582f5c",
+    "gateway/src/sensor_monitor/__init__.py": "5849b883641ba978fe3eba8dfd933a63c4bb152f06cf9fba92841b44b3c22b42",
+    "gateway/src/sensor_monitor/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "gateway/src/sensor_monitor/alerts.py": "8c0fea3dd2a81da4f4294d09778762256bd23aa8b95a49755c5176000ce9f508",
+    "gateway/src/sensor_monitor/app.py": "ef795ef62eaccc4210049fdd8688629c42ecfebbc70e8dab562aeded64340f71",
+    "gateway/src/sensor_monitor/bridge.py": "edc81a4acaed8e2e90381930e5d398792f512772b923d31e213336102042dfd4",
+    "gateway/src/sensor_monitor/capture.py": "9686c554ec4165939e91aa74e506f1426b515734d7349684b5ebd8ebe1a223f9",
+    "gateway/src/sensor_monitor/cli.py": "5e8cedc2d30279c5a9b34b25c083ed92fbd912f1f1a045e026e21a0ddffc907b",
+    "gateway/src/sensor_monitor/config.py": "0f1c1ba83fdf5477e4d249db8e257419a76cf792d86ceb2dd07dc14a95374ee6",
+    "gateway/src/sensor_monitor/firmware_source.py": "4159aca6aa8f2e7736333bb2e091994470be2f28f5a85e47fc42fe406015a706",
+    "gateway/src/sensor_monitor/hub.py": "936f2b058b021f6a64379be0c9424bc60b63a39bd129306e5ef9a8d29b3d5370",
+    "gateway/src/sensor_monitor/logging_setup.py": "16c7256d1504bd1e8c27a26352961076187a35ae42d610de6263e85872c536f6",
+    "gateway/src/sensor_monitor/models.py": "66c8435145e7301e7e1139d655aa4ec6cb7e36835cd7aae86ecaee98ab397bf7",
+    "gateway/src/sensor_monitor/protocol.py": "da0443037df96ddff1ccba40c430967044d64d1941176e8337848ab93881acea",
+    "gateway/src/sensor_monitor/shared_protocol.py": "cfd605864c80bb277fe0a370545a2e9eaa77ecd53f215e28d8da19adbb7ad10b",
+    "gateway/src/sensor_monitor/sources.py": "869f20cadfe80365676749d4ee904393284bbd42cefbea3a87e72749507f7fee",
+    "gateway/src/sensor_monitor/store.py": "e653ade577b41a01e60b39321875710bcd70beb2a5223e234d1c953fc5445a2a"
+  },
+  "binary_sha256": "b49d9bbafa9d62a4cd6339ff11e0f174910e5fe0a51ab8f9a65dea09c2cda563",
+  "scope": "real C subprocess reboots, scripted stream interruptions, real loopback WebSockets; memory covers server and bounded test clients in one process; no physical UART"
+}

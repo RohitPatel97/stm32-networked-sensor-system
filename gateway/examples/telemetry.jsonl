@@ -1,0 +1,3 @@
+{"schema_version":1,"device_id":"stm32-sensor-hub","sequence":120,"uptime_ms":12000,"temperature_c":24.61,"pressure_hpa":1013.18,"accel_g":[0.002,-0.006,1.001],"battery_v":12.42,"i2c_errors":0,"queue_drops":0,"watchdog_resets":0}
+{"schema_version":1,"device_id":"stm32-sensor-hub","sequence":121,"uptime_ms":12100,"temperature_c":24.64,"pressure_hpa":1013.21,"accel_g":[0.003,-0.005,0.999],"battery_v":12.42,"i2c_errors":0,"queue_drops":0,"watchdog_resets":0}
+{"schema_version":1,"device_id":"stm32-sensor-hub","sequence":122,"uptime_ms":12200,"temperature_c":24.66,"pressure_hpa":1013.23,"accel_g":[0.004,-0.004,1.002],"battery_v":12.41,"i2c_errors":0,"queue_drops":0,"watchdog_resets":0}

@@ -1,0 +1,31 @@
+{
+  "package_path": "C:\\Users\\sr116\\Desktop\\Resume\\Projects\\stm32-networked-sensor-system\\build\\sandbox-20261017-rxotbc23\\.venv\\Lib\\site-packages\\sensor_monitor\\__init__.py",
+  "port": 53772,
+  "passed": true,
+  "stats": {
+    "started_at": "2026-10-17T18:28:46.112370Z",
+    "frames_received": 25,
+    "frames_accepted": 25,
+    "parse_errors": 0,
+    "sequence_anomalies": 0,
+    "session_changes": 0,
+    "device_rejections": 0,
+    "websocket_clients": 1,
+    "websocket_drops": 0,
+    "source_reconnects": 0
+  },
+  "health": {
+    "status": "ok",
+    "version": "3.0.0",
+    "source": "firmware",
+    "frames_accepted": 25,
+    "acquisition_running": true
+  },
+  "events_received": 20,
+  "dashboard": {
+    "returncode": 0,
+    "stdout": "dashboard recovery verified with real compiled firmware events\n",
+    "stderr": ""
+  },
+  "server_returncode_after_cleanup": 1
+}

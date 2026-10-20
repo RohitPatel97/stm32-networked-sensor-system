@@ -1,0 +1,59 @@
+{
+  "checked_at": "2026-10-20T17:45:19.152858+00:00",
+  "pairs": [
+    {
+      "label": "Main text",
+      "foreground": "#e8eff5",
+      "background": "#17232f",
+      "ratio": 13.73
+    },
+    {
+      "label": "Secondary text",
+      "foreground": "#b7c6d4",
+      "background": "#17232f",
+      "ratio": 9.14
+    },
+    {
+      "label": "Primary button",
+      "foreground": "#0d2620",
+      "background": "#72e2c5",
+      "ratio": 10.19
+    },
+    {
+      "label": "Success",
+      "foreground": "#72e2c5",
+      "background": "#19362f",
+      "ratio": 8.32
+    },
+    {
+      "label": "Warning",
+      "foreground": "#f5d18a",
+      "background": "#3b3223",
+      "ratio": 8.62
+    },
+    {
+      "label": "Error",
+      "foreground": "#ffabb8",
+      "background": "#3b2630",
+      "ratio": 7.82
+    },
+    {
+      "label": "X axis",
+      "foreground": "#a2d9ff",
+      "background": "#1b3d56",
+      "ratio": 7.52
+    },
+    {
+      "label": "Y axis",
+      "foreground": "#f5d18a",
+      "background": "#443724",
+      "ratio": 7.91
+    },
+    {
+      "label": "Z axis",
+      "foreground": "#d1baff",
+      "background": "#362d4c",
+      "ratio": 7.44
+    }
+  ]
+}

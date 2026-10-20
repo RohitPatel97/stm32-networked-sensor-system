@@ -1,0 +1,11 @@
+2026-10-20T17:16:05.5502709Z Owned gateway PID 3060
+2026-10-20T17:16:08.2993050Z Starting Renode / STM32F401RE / FreeRTOS...
+2026-10-20T17:16:12.2776511Z 2026-10-20T10:16:12-0700 INFO sensor_monitor.hub telemetry acquisition started
+2026-10-20T17:16:13.8103262Z READY: http://127.0.0.1:8765/lab
+2026-10-20T17:16:13.8103262Z Preflight passed. All sensor readings, boot identity and watchdog health are live.
+2026-10-20T17:16:13.8103262Z Logs: C:\Users\sr116\Desktop\Resume\Projects\stm32-networked-sensor-system\var\interview\20261020-101608-292277
+2026-10-20T17:16:13.8103262Z Reports: C:\Users\sr116\Desktop\Resume\Projects\stm32-networked-sensor-system\var\lab-reports
+2026-10-20T17:16:13.8113478Z Close Sensor Lab to stop.
+2026-10-20T17:16:14.2709725Z Desktop ready
+2026-10-20T17:20:40.1328963Z 2026-10-20T10:20:40-0700 INFO sensor_monitor.hub telemetry acquisition stopped
+2026-10-20T17:20:45.4114703Z Desktop closed cleanly.

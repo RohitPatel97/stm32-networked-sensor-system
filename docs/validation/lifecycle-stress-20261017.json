@@ -1,0 +1,278 @@
+{
+  "factory": {
+    "cycles": 200,
+    "collected_cycles": 200,
+    "samples": [
+      {
+        "cycle": 25,
+        "python_bytes": 16477,
+        "threads": 1,
+        "working_set": 55713792,
+        "private_bytes": 40304640,
+        "handles": 238
+      },
+      {
+        "cycle": 50,
+        "python_bytes": 21648,
+        "threads": 1,
+        "working_set": 55717888,
+        "private_bytes": 40304640,
+        "handles": 238
+      },
+      {
+        "cycle": 75,
+        "python_bytes": 27428,
+        "threads": 1,
+        "working_set": 55726080,
+        "private_bytes": 40304640,
+        "handles": 238
+      },
+      {
+        "cycle": 100,
+        "python_bytes": 33574,
+        "threads": 1,
+        "working_set": 55730176,
+        "private_bytes": 40304640,
+        "handles": 238
+      },
+      {
+        "cycle": 125,
+        "python_bytes": 38391,
+        "threads": 1,
+        "working_set": 55734272,
+        "private_bytes": 40304640,
+        "handles": 238
+      },
+      {
+        "cycle": 150,
+        "python_bytes": 42251,
+        "threads": 1,
+        "working_set": 55734272,
+        "private_bytes": 40304640,
+        "handles": 238
+      },
+      {
+        "cycle": 175,
+        "python_bytes": 46488,
+        "threads": 1,
+        "working_set": 55742464,
+        "private_bytes": 40304640,
+        "handles": 238
+      },
+      {
+        "cycle": 200,
+        "python_bytes": 48987,
+        "threads": 1,
+        "working_set": 55742464,
+        "private_bytes": 40304640,
+        "handles": 238
+      }
+    ],
+    "top_growth": [
+      "C:\\Users\\sr116\\Desktop\\Resume\\Projects\\stm32-networked-sensor-system\\.venv\\Lib\\site-packages\\starlette\\routing.py:131: size=24.7 KiB (+24.7 KiB), count=539 (+539), average=47 B",
+      "C:\\Users\\sr116\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\logging\\__init__.py:1263: size=16.1 KiB (+16.1 KiB), count=137 (+137), average=120 B",
+      "C:\\Users\\sr116\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\ctypes\\__init__.py:373: size=6392 B (+6392 B), count=25 (+25), average=256 B",
+      "C:\\Users\\sr116\\Desktop\\Resume\\Projects\\stm32-networked-sensor-system\\scripts\\stress_test.py:42: size=4160 B (+4160 B), count=25 (+25), average=166 B",
+      "C:\\Users\\sr116\\Desktop\\Resume\\Projects\\stm32-networked-sensor-system\\scripts\\lifecycle_stress.py:40: size=2584 B (+2584 B), count=26 (+26), average=99 B",
+      "C:\\Users\\sr116\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\ctypes\\__init__.py:397: size=1704 B (+1704 B), count=25 (+25), average=68 B",
+      "C:\\Users\\sr116\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\ctypes\\__init__.py:399: size=1008 B (+1008 B), count=6 (+6), average=168 B",
+      "C:\\Users\\sr116\\Desktop\\Resume\\Projects\\stm32-networked-sensor-system\\scripts\\stress_test.py:63: size=512 B (+512 B), count=17 (+17), average=30 B",
+      "C:\\Users\\sr116\\Desktop\\Resume\\Projects\\stm32-networked-sensor-system\\scripts\\stress_test.py:44: size=504 B (+504 B), count=9 (+9), average=56 B",
+      "C:\\Users\\sr116\\Desktop\\Resume\\Projects\\stm32-networked-sensor-system\\scripts\\stress_test.py:54: size=360 B (+360 B), count=6 (+6), average=60 B"
+    ],
+    "checks": {
+      "every_app_hub_and_source_collected": true,
+      "python_retained_below_256_KiB": true
+    },
+    "passed": true,
+    "scope": "application-factory lifecycles after 10 warmup cycles; continuous tracemalloc"
+  },
+  "servers": {
+    "cycles": [
+      {
+        "cycle": 1,
+        "tasks": 1,
+        "threads": 1,
+        "working_set": 71983104,
+        "private_bytes": 52158464,
+        "handles": 289
+      },
+      {
+        "cycle": 2,
+        "tasks": 1,
+        "threads": 1,
+        "working_set": 72249344,
+        "private_bytes": 51519488,
+        "handles": 289
+      },
+      {
+        "cycle": 3,
+        "tasks": 1,
+        "threads": 1,
+        "working_set": 72167424,
+        "private_bytes": 51437568,
+        "handles": 289
+      },
+      {
+        "cycle": 4,
+        "tasks": 1,
+        "threads": 1,
+        "working_set": 72495104,
+        "private_bytes": 51642368,
+        "handles": 289
+      },
+      {
+        "cycle": 5,
+        "tasks": 1,
+        "threads": 1,
+        "working_set": 72192000,
+        "private_bytes": 51556352,
+        "handles": 289
+      },
+      {
+        "cycle": 6,
+        "tasks": 1,
+        "threads": 1,
+        "working_set": 72593408,
+        "private_bytes": 51843072,
+        "handles": 288
+      }
+    ],
+    "checks": {
+      "functional_checks_passed": true,
+      "only_controller_task_remains": true,
+      "no_handle_accumulation": true,
+      "no_thread_accumulation": true,
+      "working_set_growth_bounded": true
+    },
+    "functional_checks": [
+      {
+        "scheduled_duration_completed": true,
+        "all_fresh_frames_accepted": true,
+        "fast_subscriber_complete_and_ordered": true,
+        "only_injected_sequence_rejections": true,
+        "only_injected_parse_errors": true,
+        "all_reboots_observed": true,
+        "reconnect_count_matches": true,
+        "no_device_rejections": true,
+        "websocket_reconnects_succeeded": true,
+        "persistent_websocket_ordered": true,
+        "history_bounded": true,
+        "latest_boot_retained": true,
+        "sensor_outage_and_recovery_seen": true,
+        "slow_drop_count_matches": true,
+        "slow_queue_retains_latest": true,
+        "slow_queue_join_completes": true,
+        "simulator_child_reaped": true,
+        "subscribers_released": true
+      },
+      {
+        "scheduled_duration_completed": true,
+        "all_fresh_frames_accepted": true,
+        "fast_subscriber_complete_and_ordered": true,
+        "only_injected_sequence_rejections": true,
+        "only_injected_parse_errors": true,
+        "all_reboots_observed": true,
+        "reconnect_count_matches": true,
+        "no_device_rejections": true,
+        "websocket_reconnects_succeeded": true,
+        "persistent_websocket_ordered": true,
+        "history_bounded": true,
+        "latest_boot_retained": true,
+        "sensor_outage_and_recovery_seen": true,
+        "slow_drop_count_matches": true,
+        "slow_queue_retains_latest": true,
+        "slow_queue_join_completes": true,
+        "simulator_child_reaped": true,
+        "subscribers_released": true
+      },
+      {
+        "scheduled_duration_completed": true,
+        "all_fresh_frames_accepted": true,
+        "fast_subscriber_complete_and_ordered": true,
+        "only_injected_sequence_rejections": true,
+        "only_injected_parse_errors": true,
+        "all_reboots_observed": true,
+        "reconnect_count_matches": true,
+        "no_device_rejections": true,
+        "websocket_reconnects_succeeded": true,
+        "persistent_websocket_ordered": true,
+        "history_bounded": true,
+        "latest_boot_retained": true,
+        "sensor_outage_and_recovery_seen": true,
+        "slow_drop_count_matches": true,
+        "slow_queue_retains_latest": true,
+        "slow_queue_join_completes": true,
+        "simulator_child_reaped": true,
+        "subscribers_released": true
+      },
+      {
+        "scheduled_duration_completed": true,
+        "all_fresh_frames_accepted": true,
+        "fast_subscriber_complete_and_ordered": true,
+        "only_injected_sequence_rejections": true,
+        "only_injected_parse_errors": true,
+        "all_reboots_observed": true,
+        "reconnect_count_matches": true,
+        "no_device_rejections": true,
+        "websocket_reconnects_succeeded": true,
+        "persistent_websocket_ordered": true,
+        "history_bounded": true,
+        "latest_boot_retained": true,
+        "sensor_outage_and_recovery_seen": true,
+        "slow_drop_count_matches": true,
+        "slow_queue_retains_latest": true,
+        "slow_queue_join_completes": true,
+        "simulator_child_reaped": true,
+        "subscribers_released": true
+      },
+      {
+        "scheduled_duration_completed": true,
+        "all_fresh_frames_accepted": true,
+        "fast_subscriber_complete_and_ordered": true,
+        "only_injected_sequence_rejections": true,
+        "only_injected_parse_errors": true,
+        "all_reboots_observed": true,
+        "reconnect_count_matches": true,
+        "no_device_rejections": true,
+        "websocket_reconnects_succeeded": true,
+        "persistent_websocket_ordered": true,
+        "history_bounded": true,
+        "latest_boot_retained": true,
+        "sensor_outage_and_recovery_seen": true,
+        "slow_drop_count_matches": true,
+        "slow_queue_retains_latest": true,
+        "slow_queue_join_completes": true,
+        "simulator_child_reaped": true,
+        "subscribers_released": true
+      },
+      {
+        "scheduled_duration_completed": true,
+        "all_fresh_frames_accepted": true,
+        "fast_subscriber_complete_and_ordered": true,
+        "only_injected_sequence_rejections": true,
+        "only_injected_parse_errors": true,
+        "all_reboots_observed": true,
+        "reconnect_count_matches": true,
+        "no_device_rejections": true,
+        "websocket_reconnects_succeeded": true,
+        "persistent_websocket_ordered": true,
+        "history_bounded": true,
+        "latest_boot_retained": true,
+        "sensor_outage_and_recovery_seen": true,
+        "slow_drop_count_matches": true,
+        "slow_queue_retains_latest": true,
+        "slow_queue_join_completes": true,
+        "simulator_child_reaped": true,
+        "subscribers_released": true
+      }
+    ],
+    "passed": true,
+    "scope": "independent server start/stop cycles in one event loop; post-GC resources"
+  },
+  "source_sha256": {
+    "scripts/lifecycle_stress.py": "28cd00884144567e9c195af264a38b0c8b0f03727b8505c0a2ee1a7818bb22b4",
+    "gateway/src/sensor_monitor/app.py": "ef795ef62eaccc4210049fdd8688629c42ecfebbc70e8dab562aeded64340f71"
+  },
+  "passed": true
+}

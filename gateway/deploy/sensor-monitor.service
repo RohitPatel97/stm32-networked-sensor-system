@@ -1,0 +1,23 @@
+[Unit]
+Description=Networked Embedded Sensor Monitor
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=sensor-monitor
+Group=dialout
+WorkingDirectory=/opt/sensor-monitor
+EnvironmentFile=-/etc/sensor-monitor.env
+Environment=SENSOR_MONITOR_LOG_DIR=/var/log/sensor-monitor
+ExecStart=/opt/sensor-monitor/.venv/bin/sensor-monitor serve
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/log/sensor-monitor
+
+[Install]
+WantedBy=multi-user.target

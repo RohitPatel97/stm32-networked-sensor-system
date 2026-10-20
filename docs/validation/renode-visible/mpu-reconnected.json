@@ -1,0 +1,76 @@
+{
+  "type": "snapshot",
+  "devices": [
+    {
+      "device_id": "stm32-30a394ad15b855478152c752-0",
+      "state": "online",
+      "last_seen": "2026-10-17T20:10:25.359833Z",
+      "age_seconds": 0.021,
+      "last_sequence": 5181,
+      "boot_id": 1,
+      "i2c_errors": 673,
+      "queue_drops": 0,
+      "watchdog_resets": null,
+      "detail": "telemetry is current",
+      "boot_id_decimal": "1",
+      "sample_age_seconds": 0.03,
+      "measurement_state": "current",
+      "mpu6050": "online",
+      "bmp280": "online"
+    }
+  ],
+  "alerts": [
+    {
+      "id": "de0159bf-57c9-440e-acd0-1c7a949121cc",
+      "device_id": "stm32-30a394ad15b855478152c752-0",
+      "code": "i2c_errors",
+      "severity": "info",
+      "message": "No new I2C errors in the recovery window",
+      "active": false,
+      "observed_value": 673,
+      "created_at": "2026-10-17T20:10:17.364215Z"
+    },
+    {
+      "id": "00bdd5ca-e4f8-4798-a7c5-41c5420a6799",
+      "device_id": "stm32-30a394ad15b855478152c752-0",
+      "code": "imu_unavailable",
+      "severity": "info",
+      "message": "Recovered: IMU data unavailable",
+      "active": false,
+      "observed_value": null,
+      "created_at": "2026-10-17T20:10:17.300708Z"
+    },
+    {
+      "id": "f57c8773-d071-491c-a2df-794eb1a7c6f8",
+      "device_id": "stm32-30a394ad15b855478152c752-0",
+      "code": "imu_unavailable",
+      "severity": "warning",
+      "message": "IMU data unavailable",
+      "active": true,
+      "observed_value": null,
+      "created_at": "2026-10-17T20:09:39.009628Z"
+    },
+    {
+      "id": "5bf3b1a9-48f6-4e2c-8427-911a89bf0b11",
+      "device_id": "stm32-30a394ad15b855478152c752-0",
+      "code": "i2c_errors",
+      "severity": "warning",
+      "message": "Device reports 3 I2C errors",
+      "active": true,
+      "observed_value": 3,
+      "created_at": "2026-10-17T20:09:39.009628Z"
+    }
+  ],
+  "stats": {
+    "started_at": "2026-10-17T20:02:01.491184Z",
+    "frames_received": 5039,
+    "frames_accepted": 5039,
+    "parse_errors": 0,
+    "sequence_anomalies": 0,
+    "session_changes": 0,
+    "device_rejections": 0,
+    "websocket_clients": 1,
+    "websocket_drops": 0,
+    "source_reconnects": 0
+  }
+}

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="STM32 sensor hub live emulation, component tests and documented evidence">
+  <title>STM32 Sensor Lab</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230d9488'/%3E%3Cpath d='M8 8h16v16H8z' fill='none' stroke='white' stroke-width='2'/%3E%3C/svg%3E">
+  <meta name="theme-color" content="#0d151e">
+  <link rel="stylesheet" href="/lab-assets/lab.css?v=4">
+  <script src="/lab-assets/lab.js?v=4" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to console</a>
+  <aside class="sidebar">
+    <div class="brand"><span class="chip-mark" aria-hidden="true">H</span><div>Sensor Lab<small>STM32 DEVELOPMENT SYSTEM</small></div></div>
+    <div class="sidebar-label">WORKSPACE</div>
+    <nav aria-label="Workspace sections">
+      <button data-view="overview" aria-current="page"><span aria-hidden="true">◫</span> Live overview</button>
+      <button data-view="tests"><span aria-hidden="true">✓</span> Component tests <b id="catalog-count">22</b></button>
+      <button data-view="reports"><span aria-hidden="true">≡</span> Run reports</button>
+      <button data-view="coverage"><span aria-hidden="true">◇</span> Model coverage</button>
+    </nav>
+    <div class="sidebar-foot"><span class="status-dot"></span> LOCAL EMULATION<p>ARM firmware in Renode<br>MPU6050 + BMP280</p><small>Electrical validation requires hardware.</small></div>
+  </aside>
+  <div class="workspace">
+    <header class="topbar"><div class="breadcrumb">Embedded systems <span>/</span> STM32F401RE</div><div class="connection" id="connection" role="status">Connecting…</div></header>
+    <main id="main">
+      <div class="page-heading"><div><p class="eyebrow">RENODE TEST CONSOLE</p><h1 id="page-title">Live overview</h1><p id="page-description">Follow the complete path from sensor registers to the dashboard.</p></div><div class="page-actions"><button class="secondary" id="show-acceleration">Show acceleration test</button><button class="primary" id="run-all">Run all tests <span aria-hidden="true">↗</span></button></div></div>
+      <section class="run-banner" id="run-banner" aria-label="Current test run" hidden>
+        <div><span class="badge" id="run-state">READY</span><strong id="run-heading">Test run</strong><p id="run-detail" role="status" aria-live="polite"></p></div>
+        <div class="run-progress"><progress id="run-progress" value="0" max="22" aria-label="Completed tests"></progress><span id="progress-text"></span></div>
+        <button class="secondary" id="cancel-run" hidden>Stop after current test</button><a class="button secondary" id="current-report" hidden>Download report</a>
+      </section>
+      <p id="notice" class="notice" role="status" aria-live="polite" hidden></p>
+
+      <section data-panel="overview">
+        <div class="summary-grid">
+          <article class="summary"><span>BOARD STATE</span><strong id="device-state">Waiting</strong><small id="measurement-state">Waiting for telemetry</small></article>
+          <article class="summary"><span>BOOT SESSION</span><strong id="boot-id">—</strong><small>Flash journal identity</small></article>
+          <article class="summary"><span>FRAMES ACCEPTED</span><strong id="frames">0</strong><small id="source-name">Renode UART → gateway</small></article>
+          <article class="summary"><span>WATCHDOG</span><strong id="watchdog-state">—</strong><small id="watchdog-detail">Independent hardware watchdog</small></article>
+        </div>
+        <div class="overview-grid">
+          <section class="card instruments"><div class="card-heading"><div><p class="eyebrow">LIVE MEASUREMENTS</p><h2>Sensor instruments</h2></div><span class="badge neutral" id="sample-age">—</span></div>
+            <div class="instrument"><div class="instrument-label"><h3>Acceleration <small>g</small></h3><span class="sensor-status" id="imu-status">Waiting</span></div><div class="axes" id="acceleration"><div><span class="axis x">X</span><strong id="ax">—</strong></div><div><span class="axis y">Y</span><strong id="ay">—</strong></div><div><span class="axis z">Z</span><strong id="az">—</strong></div></div>
+              <div class="acceleration-check" id="acceleration-check" hidden>
+                <strong id="acceleration-result" role="status">Applying test values through Renode…</strong>
+                <p>Expected: X <b>+0.500</b> · Y <b>−0.250</b> · Z <b>+0.750 g</b></p>
+                <p id="acceleration-observed">Waiting for a verified firmware sample.</p>
+                <p class="footnote">The demonstration also rotates the gyro. Values stay applied until you restore the board or start another test.</p>
+                <div class="page-actions"><button class="secondary" id="acceleration-restore">Restore / stationary</button><a class="button secondary" id="acceleration-report" hidden>Download acceleration result</a></div>
+              </div>
+            </div>
+            <div class="instrument"><div class="instrument-label"><h3>Angular velocity <small>deg/s</small></h3><span>MPU6050</span></div><div class="axes" id="gyroscope"><div><span class="axis x">X</span><strong id="gx">—</strong></div><div><span class="axis y">Y</span><strong id="gy">—</strong></div><div><span class="axis z">Z</span><strong id="gz">—</strong></div></div></div>
+            <div class="instrument"><div class="instrument-label"><h3>Environment</h3><span class="sensor-status" id="baro-status">Waiting</span></div><div class="environment"><div><span>Temperature</span><strong id="temperature">—</strong><small>°C</small></div><div><span>Pressure</span><strong id="pressure">—</strong><small>hPa</small></div><div><span>Altitude</span><strong id="altitude">—</strong><small>m · pressure derived</small></div></div></div>
+            <div class="instrument-footer">IMU die temperature <b id="imu-temperature">—</b><span>Stationary acceleration includes gravity.</span></div>
+          </section>
+          <section class="card board-card"><div class="card-heading"><div><p class="eyebrow">CONFIGURED HARDWARE</p><h2>The emulated hub</h2></div><span class="badge">ARM</span></div>
+            <div class="board-map" aria-label="Sensor models connect over I2C1 to an STM32F401RE running FreeRTOS, then USART2 connects to the gateway">
+              <div class="sensor-pair"><button data-component="MPU6050"><strong>MPU6050</strong><small>I2C · 0x68</small><span id="board-imu">●</span></button><button data-component="BMP280"><strong>BMP280</strong><small>I2C · 0x76</small><span id="board-baro">●</span></button></div>
+              <div class="bus-line">I2C1 · 400 kHz configuration</div>
+              <button class="mcu" data-component="CPU / RTOS"><span>STM32F401RE</span><strong>Cortex-M4F</strong><small>FreeRTOS · 512 KB flash · 96 KB SRAM</small></button>
+              <div class="bus-line">USART2 · 115200 baud configuration</div>
+              <div class="gateway-node">Python gateway <span>→</span> Browser</div>
+            </div>
+            <p class="footnote">Select a component to see its tests. This is a connection diagram of digital models.</p><div class="device-label">BOARD UID<code id="device-id">Waiting for firmware</code></div>
+          </section>
+          <section class="card plot-card"><div class="card-heading"><div><p class="eyebrow">RECENT HISTORY</p><h2>Telemetry trend</h2></div><label class="sr-only" for="plot-metric">Plot measurement</label><select id="plot-metric"><option value="temperature">Temperature · °C</option><option value="altitude">Altitude · m</option><option value="pressure">Pressure · hPa</option><option value="acceleration">Acceleration XYZ · g</option><option value="gyro">Gyroscope XYZ · deg/s</option></select></div><canvas id="trend" aria-label="Recent telemetry trend" role="img"></canvas><div class="plot-footer"><span id="plot-range">Waiting for samples</span><span>Last 90 received frames · gaps indicate unavailable data</span></div></section>
+          <section class="card controls-card"><div class="card-heading"><div><p class="eyebrow">INTERVIEW DEMONSTRATION</p><h2>Change the board</h2></div><span class="badge neutral">RECORDED</span></div><div class="manual-controls" id="manual-controls"><button data-action="rest">Restore / stationary</button><button data-action="motion">Tilt and rotate</button><button data-action="altitude">Change altitude</button><button data-action="imu_off">Disconnect IMU</button><button data-action="baro_off">Disconnect barometer</button><button data-action="both_off">Disconnect both</button><button data-action="reboot">Reboot MCU</button><button data-action="uart">Reconnect UART</button><button data-action="watchdog">Trigger watchdog</button></div><p class="footnote">Each action saves an evidence report. Automated tests restore a healthy baseline between cases.</p></section>
+        </div>
+        <section class="card diagnostics-card"><div class="card-heading"><div><p class="eyebrow">FIRMWARE & TRANSPORT</p><h2>System diagnostics</h2></div><span id="memory-age" class="footnote">Memory margins update when tested</span></div><dl class="diagnostics"><div><dt>Frame sequence</dt><dd id="frame-seq">—</dd></div><div><dt>Sample sequence</dt><dd id="sample-seq">—</dd></div><div><dt>Uptime</dt><dd id="uptime">—</dd></div><div><dt>I2C errors / retries</dt><dd id="i2c">—</dd></div><div><dt>Queue drops</dt><dd id="drops">—</dd></div><div><dt>Deadline misses</dt><dd id="deadlines">—</dd></div><div><dt>Acquire / process</dt><dd id="timing">—</dd></div><div><dt>Reset flags · modeled</dt><dd id="reset-flags">—</dd></div><div><dt>Free RTOS heap</dt><dd id="heap">Not tested</dd></div><div><dt>Minimum free heap</dt><dd id="min-heap">Not tested</dd></div><div><dt>Stack margins · words</dt><dd id="stacks">Not tested</dd></div><div><dt>Decode / ordering errors</dt><dd id="decoder">—</dd></div></dl></section>
+        <section class="card"><div class="card-heading"><div><p class="eyebrow">FAULT & RECOVERY</p><h2>Recent events</h2></div><span id="alert-count" class="badge neutral">0 EVENTS</span></div><ol id="alerts" class="events"><li class="empty">No fault transitions in this session.</li></ol></section>
+        <details class="card raw"><summary>Inspect the current firmware record</summary><pre id="raw-record">Waiting for telemetry</pre></details>
+      </section>
+
+      <section data-panel="tests" hidden>
+        <div class="test-toolbar card"><div><label for="component-filter">Component</label><select id="component-filter"><option value="">All components</option></select></div><label class="check-label"><input type="checkbox" id="select-all" checked> Select visible tests</label><button class="primary" id="run-selected">Run selected tests</button></div>
+        <div class="test-list" id="test-list"></div>
+      </section>
+      <section data-panel="reports" hidden><section class="card report-intro"><h2>Evidence that stays after the demo closes</h2><p>Each run records its firmware hash, test method, expected values, observed checks, timings and before/after telemetry. JSON is machine-readable; HTML is printable and includes full evidence.</p><p class="footnote">The latest 50 reports appear here. Older files remain in the project’s <code>var/lab-reports</code> folder. A run left “running” by a process crash is incomplete, never a pass.</p></section><div id="report-list" class="report-list"></div></section>
+      <section data-panel="coverage" hidden><section class="card coverage-intro"><p class="eyebrow">KNOW WHAT THE TEST PROVES</p><h2>Coverage of this hub’s configured components</h2><p>All components used by the sensor acquisition and telemetry path have functional, configuration or diagnostic checks. Support-only and unused MCU peripherals are listed separately. Passing an emulator test does not validate physical wiring, voltage, oscillator accuracy or sensor calibration.</p></section><div id="coverage-list" class="coverage-list"></div></section>
+      <footer>STM32 Sensor Lab <span>Local execution · Renode + compiled ARM firmware · no cloud connection required</span></footer>
+    </main>
+  </div>
+</body>
+</html>

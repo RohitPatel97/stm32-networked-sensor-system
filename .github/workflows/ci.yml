@@ -1,0 +1,48 @@
+name: Integrated sensor system
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  host:
+    runs-on: ubuntu-24.04
+    strategy:
+      matrix:
+        python: ['3.11', '3.13']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '${{ matrix.python }}'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python -m pip install -r requirements-lock.txt
+      - run: python -m pip install -e './gateway[dev]'
+      - run: cmake -S firmware -B build/host -DCMAKE_BUILD_TYPE=Release
+      - run: cmake --build build/host --parallel
+      - run: python scripts/verify.py
+      - run: docker build -t sensor-gateway gateway
+  firmware:
+    runs-on: ubuntu-24.04
+    strategy:
+      matrix:
+        watchdog: ['OFF', 'ON']
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pinned Arm GNU 13.2.Rel1
+        run: |
+          curl --fail --location --retry 3 https://developer.arm.com/-/media/Files/downloads/gnu/13.2.rel1/binrel/arm-gnu-toolchain-13.2.rel1-x86_64-arm-none-eabi.tar.xz -o /tmp/arm-toolchain.tar.xz
+          echo '6cd1bbc1d9ae57312bcd169ae283153a9572bd6a8e4eeae2fedfbc33b115fdbb  /tmp/arm-toolchain.tar.xz' | sha256sum --check
+          tar -xf /tmp/arm-toolchain.tar.xz -C /tmp
+          echo '/tmp/arm-gnu-toolchain-13.2.Rel1-x86_64-arm-none-eabi/bin' >> "$GITHUB_PATH"
+      - name: Compile and check STM32 image
+        run: |
+          cmake -S firmware -B build/stm32 -G Ninja -DCMAKE_TOOLCHAIN_FILE=cmake/arm-none-eabi.cmake -DHUB_BUILD_STM32=ON -DCMAKE_BUILD_TYPE=MinSizeRel -DHUB_ENABLE_WATCHDOG=${{ matrix.watchdog }}
+          cmake --build build/stm32 --parallel
+      - uses: actions/upload-artifact@v4
+        with:
+          name: stm32-watchdog-${{ matrix.watchdog }}
+          path: |
+            build/stm32/target/stm32f401re/sensor_hub_firmware.*
+            build/stm32/target/stm32f401re/licenses/*
+            build/stm32/**/*.su

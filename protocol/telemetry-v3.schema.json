@@ -1,0 +1,297 @@
+{
+  "$defs": {
+    "Barometer": {
+      "additionalProperties": false,
+      "properties": {
+        "temperature_c": {
+          "maximum": 150,
+          "minimum": -50,
+          "title": "Temperature C",
+          "type": "number"
+        },
+        "pressure_pa": {
+          "maximum": 120000,
+          "minimum": 30000,
+          "title": "Pressure Pa",
+          "type": "number"
+        },
+        "altitude_m": {
+          "title": "Altitude M",
+          "type": "number"
+        }
+      },
+      "required": [
+        "temperature_c",
+        "pressure_pa",
+        "altitude_m"
+      ],
+      "title": "Barometer",
+      "type": "object"
+    },
+    "FirmwareHealth": {
+      "additionalProperties": false,
+      "properties": {
+        "i2c_retries": {
+          "maximum": 4294967295,
+          "minimum": 0,
+          "title": "I2C Retries",
+          "type": "integer"
+        },
+        "i2c_errors": {
+          "maximum": 4294967295,
+          "minimum": 0,
+          "title": "I2C Errors",
+          "type": "integer"
+        },
+        "queue_drops": {
+          "maximum": 4294967295,
+          "minimum": 0,
+          "title": "Queue Drops",
+          "type": "integer"
+        },
+        "deadline_misses": {
+          "maximum": 4294967295,
+          "minimum": 0,
+          "title": "Deadline Misses",
+          "type": "integer"
+        },
+        "watchdog": {
+          "enum": [
+            "fed",
+            "withheld"
+          ],
+          "title": "Watchdog",
+          "type": "string"
+        },
+        "watchdog_enabled": {
+          "title": "Watchdog Enabled",
+          "type": "boolean"
+        },
+        "reset_flags": {
+          "maximum": 4294967295,
+          "minimum": 0,
+          "title": "Reset Flags",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "i2c_retries",
+        "i2c_errors",
+        "queue_drops",
+        "deadline_misses",
+        "watchdog",
+        "watchdog_enabled",
+        "reset_flags"
+      ],
+      "title": "FirmwareHealth",
+      "type": "object"
+    },
+    "Imu": {
+      "additionalProperties": false,
+      "properties": {
+        "accel_g": {
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "maximum": 16,
+              "minimum": -16,
+              "type": "number"
+            },
+            {
+              "maximum": 16,
+              "minimum": -16,
+              "type": "number"
+            },
+            {
+              "maximum": 16,
+              "minimum": -16,
+              "type": "number"
+            }
+          ],
+          "title": "Accel G",
+          "type": "array"
+        },
+        "gyro_dps": {
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Gyro Dps",
+          "type": "array"
+        },
+        "temperature_c": {
+          "title": "Temperature C",
+          "type": "number"
+        }
+      },
+      "required": [
+        "accel_g",
+        "gyro_dps",
+        "temperature_c"
+      ],
+      "title": "Imu",
+      "type": "object"
+    },
+    "SensorStatus": {
+      "additionalProperties": false,
+      "properties": {
+        "mpu6050": {
+          "enum": [
+            "online",
+            "offline"
+          ],
+          "title": "Mpu6050",
+          "type": "string"
+        },
+        "bmp280": {
+          "enum": [
+            "online",
+            "offline"
+          ],
+          "title": "Bmp280",
+          "type": "string"
+        }
+      },
+      "required": [
+        "mpu6050",
+        "bmp280"
+      ],
+      "title": "SensorStatus",
+      "type": "object"
+    },
+    "Timing": {
+      "additionalProperties": false,
+      "properties": {
+        "acquisition_us": {
+          "maximum": 4294967295,
+          "minimum": 0,
+          "title": "Acquisition Us",
+          "type": "integer"
+        },
+        "processing_us": {
+          "maximum": 4294967295,
+          "minimum": 0,
+          "title": "Processing Us",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "acquisition_us",
+        "processing_us"
+      ],
+      "title": "Timing",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 3,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "type": {
+      "const": "telemetry",
+      "title": "Type",
+      "type": "string"
+    },
+    "device_id": {
+      "maxLength": 64,
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9._-]+$",
+      "title": "Device Id",
+      "type": "string"
+    },
+    "boot_id": {
+      "maximum": 18446744073709551615,
+      "minimum": 0,
+      "title": "Boot Id",
+      "type": "integer"
+    },
+    "frame_seq": {
+      "maximum": 4294967295,
+      "minimum": 0,
+      "title": "Frame Seq",
+      "type": "integer"
+    },
+    "uptime_ms": {
+      "maximum": 18446744073709551615,
+      "minimum": 0,
+      "title": "Uptime Ms",
+      "type": "integer"
+    },
+    "seq": {
+      "maximum": 4294967295,
+      "minimum": 0,
+      "title": "Seq",
+      "type": "integer"
+    },
+    "ts_us": {
+      "maximum": 18446744073709551615,
+      "minimum": 0,
+      "title": "Ts Us",
+      "type": "integer"
+    },
+    "sample_present": {
+      "title": "Sample Present",
+      "type": "boolean"
+    },
+    "sensors": {
+      "$ref": "#/$defs/SensorStatus"
+    },
+    "imu": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Imu"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "baro": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Barometer"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "health": {
+      "$ref": "#/$defs/FirmwareHealth"
+    },
+    "timing": {
+      "$ref": "#/$defs/Timing"
+    }
+  },
+  "required": [
+    "schema_version",
+    "type",
+    "device_id",
+    "boot_id",
+    "frame_seq",
+    "uptime_ms",
+    "seq",
+    "ts_us",
+    "sample_present",
+    "sensors",
+    "imu",
+    "baro",
+    "health",
+    "timing"
+  ],
+  "title": "UnifiedFrame",
+  "type": "object"
+}

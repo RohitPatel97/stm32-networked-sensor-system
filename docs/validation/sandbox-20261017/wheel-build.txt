@@ -1,0 +1,13 @@
+Processing c:\users\sr116\desktop\resume\projects\stm32-networked-sensor-system\build\sandbox-20261017-rxotbc23\gateway
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: stm32-sensor-gateway
+  Building wheel for stm32-sensor-gateway (pyproject.toml): started
+  Building wheel for stm32-sensor-gateway (pyproject.toml): finished with status 'done'
+  Created wheel for stm32-sensor-gateway: filename=stm32_sensor_gateway-3.0.0-py3-none-any.whl size=35096 sha256=5d0498db659e3746baa779ca84ffcb943b0bd9d45279280921ecaa8e04c48dc7
+  Stored in directory: C:\Users\sr116\AppData\Local\Temp\pip-ephem-wheel-cache-guyflg9i\wheels\ef\56\94\11b856231d074a7583668183e644455afb18630f99d4c4c79e
+Successfully built stm32-sensor-gateway

@@ -1,0 +1,76 @@
+{
+  "type": "snapshot",
+  "devices": [
+    {
+      "device_id": "stm32-bace98a7b261a83cd8b5e170-0",
+      "state": "online",
+      "last_seen": "2026-10-19T03:08:58.381637Z",
+      "age_seconds": 0.099,
+      "last_sequence": 511,
+      "boot_id": 3,
+      "i2c_errors": 0,
+      "queue_drops": 0,
+      "watchdog_resets": null,
+      "detail": "telemetry is current",
+      "boot_id_decimal": "3",
+      "sample_age_seconds": 0.106,
+      "measurement_state": "current",
+      "mpu6050": "online",
+      "bmp280": "online"
+    }
+  ],
+  "alerts": [
+    {
+      "id": "68ad6a1f-896e-456e-954b-cd5679d740d4",
+      "device_id": "stm32-bace98a7b261a83cd8b5e170-0",
+      "code": "task_health",
+      "severity": "info",
+      "message": "Recovered: Firmware task health check failed",
+      "active": false,
+      "observed_value": null,
+      "created_at": "2026-10-19T03:08:08.18119Z"
+    },
+    {
+      "id": "b53797ae-1a70-49a9-accc-754c589a7a61",
+      "device_id": "stm32-bace98a7b261a83cd8b5e170-0",
+      "code": "deadline_misses",
+      "severity": "info",
+      "message": "Recovered: New firmware deadline misses",
+      "active": false,
+      "observed_value": null,
+      "created_at": "2026-10-19T03:08:07.283309Z"
+    },
+    {
+      "id": "670fb066-bbd6-48d4-b522-13ef0db38138",
+      "device_id": "stm32-bace98a7b261a83cd8b5e170-0",
+      "code": "deadline_misses",
+      "severity": "warning",
+      "message": "New firmware deadline misses",
+      "active": true,
+      "observed_value": null,
+      "created_at": "2026-10-19T03:08:06.270961Z"
+    },
+    {
+      "id": "4535f63a-b449-409b-8b64-4c36afa879df",
+      "device_id": "stm32-bace98a7b261a83cd8b5e170-0",
+      "code": "task_health",
+      "severity": "warning",
+      "message": "Firmware task health check failed",
+      "active": true,
+      "observed_value": null,
+      "created_at": "2026-10-19T03:08:06.270961Z"
+    }
+  ],
+  "stats": {
+    "started_at": "2026-10-19T03:07:35.454494Z",
+    "frames_received": 790,
+    "frames_accepted": 790,
+    "parse_errors": 0,
+    "sequence_anomalies": 0,
+    "session_changes": 2,
+    "device_rejections": 0,
+    "websocket_clients": 1,
+    "websocket_drops": 0,
+    "source_reconnects": 0
+  }
+}

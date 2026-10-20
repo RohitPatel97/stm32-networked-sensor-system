@@ -1,0 +1,78 @@
+{
+  "started_at": "2026-10-17T19:26:00.206726+00:00",
+  "url": "http://127.0.0.1:8765/",
+  "source": "compiled C firmware simulator",
+  "events": 554,
+  "connections": 2,
+  "order_errors": 0,
+  "boots": [
+    "9007199254741096",
+    "9007199254741097",
+    "9007199254741098",
+    "9007199254741099",
+    "9007199254741100"
+  ],
+  "outage_frames": 200,
+  "recovered_online_frames": 181,
+  "health": {
+    "status": "ok",
+    "version": "3.0.0",
+    "source": "firmware",
+    "frames_accepted": 936,
+    "acquisition_running": true
+  },
+  "stats_start": {
+    "started_at": "2026-10-17T19:25:18.748978Z",
+    "frames_received": 382,
+    "frames_accepted": 382,
+    "parse_errors": 0,
+    "sequence_anomalies": 0,
+    "session_changes": 3,
+    "device_rejections": 0,
+    "websocket_clients": 1,
+    "websocket_drops": 0,
+    "source_reconnects": 3
+  },
+  "stats_end": {
+    "started_at": "2026-10-17T19:25:18.748978Z",
+    "frames_received": 936,
+    "frames_accepted": 936,
+    "parse_errors": 0,
+    "sequence_anomalies": 0,
+    "session_changes": 7,
+    "device_rejections": 0,
+    "websocket_clients": 2,
+    "websocket_drops": 0,
+    "source_reconnects": 7
+  },
+  "elapsed_seconds": 60.19335780000074,
+  "checks": {
+    "http_ready": true,
+    "both_websocket_connections_succeeded": true,
+    "continuous_order_within_connections": true,
+    "at_least_four_boots_observed": true,
+    "imu_outage_and_recovery_seen": true,
+    "no_parse_or_sequence_errors": true,
+    "no_subscriber_drops": true,
+    "new_frames_accepted": true
+  },
+  "passed": true,
+  "source_sha256": {
+    "gateway/src/sensor_monitor/__init__.py": "5849b883641ba978fe3eba8dfd933a63c4bb152f06cf9fba92841b44b3c22b42",
+    "gateway/src/sensor_monitor/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "gateway/src/sensor_monitor/alerts.py": "8c0fea3dd2a81da4f4294d09778762256bd23aa8b95a49755c5176000ce9f508",
+    "gateway/src/sensor_monitor/app.py": "ef795ef62eaccc4210049fdd8688629c42ecfebbc70e8dab562aeded64340f71",
+    "gateway/src/sensor_monitor/bridge.py": "edc81a4acaed8e2e90381930e5d398792f512772b923d31e213336102042dfd4",
+    "gateway/src/sensor_monitor/capture.py": "9686c554ec4165939e91aa74e506f1426b515734d7349684b5ebd8ebe1a223f9",
+    "gateway/src/sensor_monitor/cli.py": "5e8cedc2d30279c5a9b34b25c083ed92fbd912f1f1a045e026e21a0ddffc907b",
+    "gateway/src/sensor_monitor/config.py": "0f1c1ba83fdf5477e4d249db8e257419a76cf792d86ceb2dd07dc14a95374ee6",
+    "gateway/src/sensor_monitor/firmware_source.py": "4159aca6aa8f2e7736333bb2e091994470be2f28f5a85e47fc42fe406015a706",
+    "gateway/src/sensor_monitor/hub.py": "936f2b058b021f6a64379be0c9424bc60b63a39bd129306e5ef9a8d29b3d5370",
+    "gateway/src/sensor_monitor/logging_setup.py": "16c7256d1504bd1e8c27a26352961076187a35ae42d610de6263e85872c536f6",
+    "gateway/src/sensor_monitor/models.py": "66c8435145e7301e7e1139d655aa4ec6cb7e36835cd7aae86ecaee98ab397bf7",
+    "gateway/src/sensor_monitor/protocol.py": "da0443037df96ddff1ccba40c430967044d64d1941176e8337848ab93881acea",
+    "gateway/src/sensor_monitor/shared_protocol.py": "cfd605864c80bb277fe0a370545a2e9eaa77ecd53f215e28d8da19adbb7ad10b",
+    "gateway/src/sensor_monitor/sources.py": "869f20cadfe80365676749d4ee904393284bbd42cefbea3a87e72749507f7fee",
+    "gateway/src/sensor_monitor/store.py": "e653ade577b41a01e60b39321875710bcd70beb2a5223e234d1c953fc5445a2a"
+  }
+}

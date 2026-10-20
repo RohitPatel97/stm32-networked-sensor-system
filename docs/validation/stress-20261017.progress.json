@@ -1,0 +1,15 @@
+{
+  "elapsed": 570.1,
+  "frames": 48336,
+  "boots": 806,
+  "reconnects": 1399,
+  "fast_consumed": 48336,
+  "fast_order_errors": 0,
+  "ws_events": 55995,
+  "ws_order_errors": 0,
+  "ws_connections": 2554,
+  "ws_failures": 0,
+  "outages": 12090,
+  "recoveries": 16905,
+  "http_checks": 52
+}

@@ -1,0 +1,120 @@
+Browser tab: 1, Title: "STM32 Networked Sensor System", URL: "http://127.0.0.1:8765/".
+1 AXWebArea STM32 Networked Sensor System, URL: 127.0.0.1:8765/
+	2 container
+		3 text STM32 / RASPBERRY PI GATEWAY
+		4 heading STM32 Sensor System, Value: 1
+			5 text STM32 Sensor System
+		6 text Live
+	7 container
+		8 container Live telemetry summary
+			9 container
+				10 text TEMPERATURE
+				118 text 25.1
+				12 text C
+			13 container
+				14 text PRESSURE
+				119 text 1006.5
+				16 text hPa
+			17 container
+				18 text FRAMES
+				120 text 1184
+				20 text accepted
+			21 container
+				22 text DEVICE
+				121 text online
+				122 text stm32-bace98a7b261a83cd8b5e170-0
+		25 container
+			26 heading Firmware diagnostics, Value: 2
+				27 text Firmware diagnostics
+			28 text Source: 
+			29 text renode
+			30 definition list
+				31 container MPU6050
+					32 text MPU6050
+				123 text online / valid
+				34 container BMP280
+					35 text BMP280
+				124 text online / valid
+				37 container Measurements
+					38 text Measurements
+				125 text current
+				40 container Sample age
+					41 text Sample age
+				126 text 0.01 s
+				43 container Acceleration (g)
+					44 text Acceleration (g)
+				127 text 0.000 / 0.000 / 1.000
+				46 container Gyroscope (deg/s)
+					47 text Gyroscope (deg/s)
+				128 text 0.000 / 0.000 / 0.000
+				49 container Altitude (m)
+					50 text Altitude (m)
+				129 text 56.1
+				52 container Boot ID
+					53 text Boot ID
+				130 text 3
+				55 container Frame sequence
+					56 text Frame sequence
+				131 text 905
+				58 container Sample sequence
+					59 text Sample sequence
+				132 text 9150
+				61 container I2C errors / total
+					62 text I2C errors / total
+				133 text 0
+				64 container I2C retries / total
+					65 text I2C retries / total
+				134 text 0
+				67 container Queue drops / total
+					68 text Queue drops / total
+				135 text 0
+				70 container Deadline misses / total
+					71 text Deadline misses / total
+				136 text 0
+				73 container Acquire / process
+					74 text Acquire / process
+				137 text 35 / 7 us
+				76 container Watchdog
+					77 text Watchdog
+				138 text enabled; health eligible
+				79 container Reset flags
+					80 text Reset flags
+				139 text 0xe000000
+		82 container
+			83 text ROLLING WINDOW
+			84 heading Temperature, Value: 2
+				85 text Temperature
+			86 text Last 60 frames
+			87 image Description: Temperature history chart, ID: chart
+		88 container
+			89 text FAULT PATHS
+			90 heading Renode demonstration, Value: 2, ID: controls-title
+				91 text Renode demonstration
+			92 container renode-controls
+				93 button Stationary / restore sensors
+				94 button Tilt and rotate
+				95 button Change pressure / altitude
+				96 button Disconnect MPU6050
+				97 button Disconnect BMP280
+				98 button Disconnect both sensors
+				99 button Reboot MCU
+				100 button Reconnect UART
+				101 button Stall acquisition / watchdog reset
+			102 text STM32F401RE firmware executes in Renode. Digital sensor models feed I2C, then USART2 carries telemetry to this dashboard.
+			103 text Verified: Stationary / restore sensors. Board online; boot 3.
+		104 container
+			105 text EVENT STREAM
+			106 heading Recent alerts, Value: 2
+				107 text Recent alerts
+			108 text 4 events
+			109 content list alerts
+				110 container
+					111 text INFO stm32-bace98a7b261a83cd8b5e170-0 Recovered: Firmware task health check failed 8:08:08 PM
+				112 container
+					113 text INFO stm32-bace98a7b261a83cd8b5e170-0 Recovered: New firmware deadline misses 8:08:07 PM
+				114 container
+					115 text WARNING stm32-bace98a7b261a83cd8b5e170-0 New firmware deadline misses 8:08:06 PM
+				116 container
+					117 text WARNING stm32-bace98a7b261a83cd8b5e170-0 Firmware task health check failed 8:08:06 PM
+
+The focused UI element is 1 AXWebArea STM32 Networked Sensor System, URL: 127.0.0.1:8765/

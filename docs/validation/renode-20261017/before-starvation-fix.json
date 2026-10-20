@@ -1,0 +1,23 @@
+{
+  "started_at": "2026-10-17T19:45:26.356954+00:00",
+  "cases": [
+    {
+      "name": "healthy ARM firmware and lossless uint64",
+      "passed": true,
+      "detail": "29 events; boot 9007199254741093; sensors calibrated"
+    },
+    {
+      "name": "changed sensor registers",
+      "passed": true,
+      "detail": "0.5 g, 10 deg/s, 28.25 C reached WebSocket"
+    }
+  ],
+  "elf_sha256": "867962e9171b9fa644f6419dfbbd29e9781fb287b6207be42ce35fe6b72738b0",
+  "passed": false,
+  "error": "AssertionError()",
+  "raw_frames_validated": 49,
+  "raw_boot_ids": [
+    "9007199254741093"
+  ],
+  "finished_at": "2026-10-17T19:45:45.678642+00:00"
+}

@@ -1,0 +1,44 @@
+[1/38] Building C object CMakeFiles/sensor_hub_core.dir/src/boot_counter.c.obj
+[2/38] Building C object CMakeFiles/sensor_hub_core.dir/src/health.c.obj
+[3/38] Building C object CMakeFiles/sensor_hub_core.dir/src/i2c_bus.c.obj
+[4/38] Building C object CMakeFiles/sensor_hub_core.dir/src/bmp280.c.obj
+[5/38] Building C object CMakeFiles/sensor_hub_core.dir/src/mpu6050.c.obj
+[6/38] Building C object CMakeFiles/sensor_hub_core.dir/src/sensor_state.c.obj
+[7/38] Building C object CMakeFiles/sensor_hub_core.dir/src/processing.c.obj
+[8/38] Building C object CMakeFiles/sensor_hub_core.dir/src/telemetry.c.obj
+[9/38] Building C object target/stm32f401re/CMakeFiles/board_support.dir/ebb1f043010e15346e5484527c30dc73/build/stm32/_deps/stm32_device-src/Source/Templates/system_stm32f4xx.c.obj
+[10/38] Building C object target/stm32f401re/CMakeFiles/board_support.dir/C_/Users/sr116/Desktop/Resume/Projects/freertos-sensor-hub/build/stm32/_deps/stm32_hal-src/Src/stm32f4xx_hal.c.obj
+[11/38] Building C object target/stm32f401re/CMakeFiles/board_support.dir/1307aea909fdae33363426c1db828dd3/freertos-sensor-hub/build/stm32/_deps/stm32_hal-src/Src/stm32f4xx_hal_cortex.c.obj
+[12/38] Building C object target/stm32f401re/CMakeFiles/board_support.dir/1307aea909fdae33363426c1db828dd3/freertos-sensor-hub/build/stm32/_deps/stm32_hal-src/Src/stm32f4xx_hal_dma.c.obj
+[13/38] Building C object target/stm32f401re/CMakeFiles/board_support.dir/1307aea909fdae33363426c1db828dd3/freertos-sensor-hub/build/stm32/_deps/stm32_hal-src/Src/stm32f4xx_hal_flash.c.obj
+[14/38] Building C object target/stm32f401re/CMakeFiles/board_support.dir/ebb1f043010e15346e5484527c30dc73/build/stm32/_deps/stm32_hal-src/Src/stm32f4xx_hal_flash_ex.c.obj
+[15/38] Building C object target/stm32f401re/CMakeFiles/board_support.dir/1307aea909fdae33363426c1db828dd3/freertos-sensor-hub/build/stm32/_deps/stm32_hal-src/Src/stm32f4xx_hal_gpio.c.obj
+[16/38] Building C object target/stm32f401re/CMakeFiles/board_support.dir/1307aea909fdae33363426c1db828dd3/freertos-sensor-hub/build/stm32/_deps/stm32_hal-src/Src/stm32f4xx_hal_iwdg.c.obj
+[17/38] Building C object target/stm32f401re/CMakeFiles/board_support.dir/1307aea909fdae33363426c1db828dd3/freertos-sensor-hub/build/stm32/_deps/stm32_hal-src/Src/stm32f4xx_hal_pwr.c.obj
+[18/38] Building C object target/stm32f401re/CMakeFiles/board_support.dir/1307aea909fdae33363426c1db828dd3/freertos-sensor-hub/build/stm32/_deps/stm32_hal-src/Src/stm32f4xx_hal_pwr_ex.c.obj
+[19/38] Building C object target/stm32f401re/CMakeFiles/board_support.dir/1307aea909fdae33363426c1db828dd3/freertos-sensor-hub/build/stm32/_deps/stm32_hal-src/Src/stm32f4xx_hal_rcc.c.obj
+[20/38] Building C object target/stm32f401re/CMakeFiles/board_support.dir/1307aea909fdae33363426c1db828dd3/freertos-sensor-hub/build/stm32/_deps/stm32_hal-src/Src/stm32f4xx_hal_rcc_ex.c.obj
+[21/38] Building C object target/stm32f401re/CMakeFiles/board_support.dir/1307aea909fdae33363426c1db828dd3/freertos-sensor-hub/build/stm32/_deps/stm32_hal-src/Src/stm32f4xx_hal_i2c.c.obj
+[22/38] Building C object target/stm32f401re/CMakeFiles/board_support.dir/1307aea909fdae33363426c1db828dd3/freertos-sensor-hub/build/stm32/_deps/stm32_hal-src/Src/stm32f4xx_hal_tim_ex.c.obj
+[23/38] Building C object target/stm32f401re/CMakeFiles/board_support.dir/1307aea909fdae33363426c1db828dd3/freertos-sensor-hub/build/stm32/_deps/stm32_hal-src/Src/stm32f4xx_hal_uart.c.obj
+[24/38] Building C object target/stm32f401re/CMakeFiles/board_support.dir/1307aea909fdae33363426c1db828dd3/freertos-sensor-hub/build/stm32/_deps/stm32_hal-src/Src/stm32f4xx_hal_tim.c.obj
+[25/38] Building C object target/stm32f401re/CMakeFiles/board_support.dir/C_/Users/sr116/Desktop/Resume/Projects/freertos-sensor-hub/build/stm32/_deps/freertos-src/queue.c.obj
+[26/38] Building C object target/stm32f401re/CMakeFiles/board_support.dir/C_/Users/sr116/Desktop/Resume/Projects/freertos-sensor-hub/build/stm32/_deps/freertos-src/list.c.obj
+[27/38] Building C object target/stm32f401re/CMakeFiles/board_support.dir/C_/Users/sr116/Desktop/Resume/Projects/freertos-sensor-hub/build/stm32/_deps/freertos-src/tasks.c.obj
+[28/38] Building C object target/stm32f401re/CMakeFiles/board_support.dir/1307aea909fdae33363426c1db828dd3/freertos-sensor-hub/build/stm32/_deps/freertos-src/portable/MemMang/heap_4.c.obj
+[29/38] Linking C static library libsensor_hub_core.a
+[30/38] Building C object target/stm32f401re/CMakeFiles/board_support.dir/1307aea909fdae33363426c1db828dd3/freertos-sensor-hub/build/stm32/_deps/freertos-src/portable/GCC/ARM_CM4F/port.c.obj
+[31/38] Building C object target/stm32f401re/CMakeFiles/sensor_hub_firmware.dir/Core/Src/hub_identity.c.obj
+[32/38] Building C object target/stm32f401re/CMakeFiles/sensor_hub_firmware.dir/Core/Src/main.c.obj
+[33/38] Building C object target/stm32f401re/CMakeFiles/sensor_hub_firmware.dir/Core/Src/syscalls.c.obj
+[34/38] Linking C static library target\stm32f401re\libboard_support.a
+[35/38] Building C object target/stm32f401re/CMakeFiles/sensor_hub_firmware.dir/Core/Src/hub_stm32_port.c.obj
+[36/38] Building C object target/stm32f401re/CMakeFiles/sensor_hub_firmware.dir/Core/Src/app_freertos.c.obj
+[37/38] Building ASM object target/stm32f401re/CMakeFiles/sensor_hub_firmware.dir/7a2ab289fa9b97c95011415c14bfea7b/stm32/_deps/stm32_device-src/Source/Templates/gcc/startup_stm32f401xe.s.obj
+[38/38] Linking C executable target\stm32f401re\sensor_hub_firmware.elf
+Memory region         Used Size  Region Size  %age Used
+           FLASH:       39052 B       384 KB      9.93%
+             RAM:       32464 B        96 KB     33.02%
+   text	   data	    bss	    dec	    hex	filename
+  38560	    480	  31992	  71032	  11578	C:/Users/sr116/Desktop/Resume/Projects/stm32-networked-sensor-system/build/stm32-on/target/stm32f401re/sensor_hub_firmware.elf
+Firmware layout verified: 39052 flash bytes, 5 vectors, real FreeRTOS symbols

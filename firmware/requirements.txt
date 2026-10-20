@@ -1,0 +1,2 @@
+# Runtime dependency only for tools/dashboard.py --port. File and demo modes use stdlib only.
+pyserial>=3.5,<4

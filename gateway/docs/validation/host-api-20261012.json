@@ -1,0 +1,14 @@
+{
+  "checked_at_utc": "2026-10-12T17:44:12.770853+00:00",
+  "profile": "Windows loopback simulator; no hardware",
+  "checks": {
+    "http_readiness": true,
+    "websocket_initial_snapshot": true,
+    "critical_alert_transition": true,
+    "recovery_transition": true,
+    "accepted_telemetry": true,
+    "no_parse_errors": true
+  },
+  "frames_accepted_at_check": 391,
+  "version": "1.2.0"
+}

@@ -1,0 +1,225 @@
+{
+  "started_at": "2026-10-17T18:49:31.752129+00:00",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "duration_requested": 12.0,
+  "warmup_seconds": 3.0,
+  "requested_frame_pacing_hz": 200,
+  "first_boot": "9007199254741093",
+  "metrics": {
+    "fast_consumed": 8588,
+    "fast_order_errors": 0,
+    "ws_events": 8762,
+    "ws_order_errors": 0,
+    "ws_connections": 60,
+    "ws_failures": 0,
+    "outages": 2145,
+    "recoveries": 3003,
+    "http_checks": 9
+  },
+  "elapsed_seconds": 12.054112199999508,
+  "frames": 8588,
+  "boots": 144,
+  "effective_frames_per_second": 712.4539623913862,
+  "stats": {
+    "started_at": "2026-10-17T18:49:31.740384Z",
+    "frames_received": 8809,
+    "frames_accepted": 8588,
+    "parse_errors": 17,
+    "sequence_anomalies": 204,
+    "session_changes": 143,
+    "device_rejections": 0,
+    "websocket_clients": 2,
+    "websocket_drops": 8524,
+    "source_reconnects": 248
+  },
+  "samples": [
+    {
+      "elapsed": 3.133089499999187,
+      "python_bytes": 6061698,
+      "tasks": 12,
+      "threads": 1,
+      "working_set": 80031744,
+      "private_bytes": 59146240,
+      "handles": 313
+    },
+    {
+      "elapsed": 4.035709100000531,
+      "python_bytes": 5940385,
+      "tasks": 10,
+      "threads": 1,
+      "working_set": 80134144,
+      "private_bytes": 59219968,
+      "handles": 307
+    },
+    {
+      "elapsed": 5.067472499998985,
+      "python_bytes": 5957114,
+      "tasks": 11,
+      "threads": 1,
+      "working_set": 80158720,
+      "private_bytes": 59219968,
+      "handles": 309
+    },
+    {
+      "elapsed": 6.0508133000003,
+      "python_bytes": 5953073,
+      "tasks": 10,
+      "threads": 1,
+      "working_set": 80244736,
+      "private_bytes": 59289600,
+      "handles": 307
+    },
+    {
+      "elapsed": 7.051538800000344,
+      "python_bytes": 5958741,
+      "tasks": 10,
+      "threads": 1,
+      "working_set": 80261120,
+      "private_bytes": 59289600,
+      "handles": 307
+    },
+    {
+      "elapsed": 8.061592199999723,
+      "python_bytes": 6091004,
+      "tasks": 13,
+      "threads": 1,
+      "working_set": 80404480,
+      "private_bytes": 59437056,
+      "handles": 313
+    },
+    {
+      "elapsed": 9.049774799999796,
+      "python_bytes": 5958880,
+      "tasks": 10,
+      "threads": 1,
+      "working_set": 80556032,
+      "private_bytes": 59576320,
+      "handles": 309
+    },
+    {
+      "elapsed": 10.04843979999896,
+      "python_bytes": 5942938,
+      "tasks": 11,
+      "threads": 1,
+      "working_set": 80560128,
+      "private_bytes": 59576320,
+      "handles": 309
+    },
+    {
+      "elapsed": 11.050250500000402,
+      "python_bytes": 5959522,
+      "tasks": 10,
+      "threads": 1,
+      "working_set": 80568320,
+      "private_bytes": 59576320,
+      "handles": 307
+    }
+  ],
+  "growth": {
+    "python_bytes": {
+      "first_window_median": 5957114,
+      "last_window_median": 5958880,
+      "window_growth": 1766,
+      "maximum": 6091004,
+      "minimum": 5940385,
+      "slope_per_minute": -254038.20937789523
+    },
+    "private_bytes": {
+      "first_window_median": 59219968,
+      "last_window_median": 59576320,
+      "window_growth": 356352,
+      "maximum": 59576320,
+      "minimum": 59146240,
+      "slope_per_minute": 3669193.6763478965
+    },
+    "working_set": {
+      "first_window_median": 80134144,
+      "last_window_median": 80560128,
+      "window_growth": 425984,
+      "maximum": 80568320,
+      "minimum": 80031744,
+      "slope_per_minute": 4400681.034048618
+    },
+    "handles": {
+      "first_window_median": 309,
+      "last_window_median": 309,
+      "window_growth": 0,
+      "maximum": 313,
+      "minimum": 307,
+      "slope_per_minute": -11.720786989337434
+    },
+    "tasks": {
+      "first_window_median": 11,
+      "last_window_median": 10,
+      "window_growth": -1,
+      "maximum": 13,
+      "minimum": 10,
+      "slope_per_minute": -3.9007826194315576
+    },
+    "threads": {
+      "first_window_median": 1,
+      "last_window_median": 1,
+      "window_growth": 0,
+      "maximum": 1,
+      "minimum": 1,
+      "slope_per_minute": 0.0
+    }
+  },
+  "checks": {
+    "scheduled_duration_completed": true,
+    "all_fresh_frames_accepted": true,
+    "fast_subscriber_complete_and_ordered": true,
+    "only_injected_sequence_rejections": true,
+    "only_injected_parse_errors": true,
+    "all_reboots_observed": true,
+    "reconnect_count_matches": true,
+    "no_device_rejections": true,
+    "websocket_reconnects_succeeded": true,
+    "persistent_websocket_ordered": true,
+    "history_bounded": true,
+    "latest_boot_retained": true,
+    "sensor_outage_and_recovery_seen": true,
+    "slow_drop_count_matches": true,
+    "slow_queue_retains_latest": true,
+    "slow_queue_join_completes": false,
+    "python_growth_bounded": true,
+    "python_slope_bounded": true,
+    "rss_growth_bounded": true,
+    "handle_growth_bounded": true,
+    "task_growth_bounded": true,
+    "simulator_child_reaped": true,
+    "private_memory_growth_bounded": true,
+    "private_memory_slope_bounded": false,
+    "subscribers_released": true
+  },
+  "passed": false,
+  "subscribers_after_shutdown": 0,
+  "resources_after_shutdown": {
+    "threads": 1,
+    "working_set": 80584704,
+    "private_bytes": 59576320,
+    "handles": 312
+  },
+  "source_sha256": {
+    "scripts/stress_test.py": "9c94e4ae01ad1a1b9ce255b749b86e6ff730ab680591ad206615a23da54b4ccb",
+    "gateway/src/sensor_monitor/__init__.py": "5849b883641ba978fe3eba8dfd933a63c4bb152f06cf9fba92841b44b3c22b42",
+    "gateway/src/sensor_monitor/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "gateway/src/sensor_monitor/alerts.py": "8c0fea3dd2a81da4f4294d09778762256bd23aa8b95a49755c5176000ce9f508",
+    "gateway/src/sensor_monitor/app.py": "79fb908c619e30794ecb81cf5b4c37219cd5b8ff5e466583ab635d4856844aac",
+    "gateway/src/sensor_monitor/bridge.py": "edc81a4acaed8e2e90381930e5d398792f512772b923d31e213336102042dfd4",
+    "gateway/src/sensor_monitor/capture.py": "9686c554ec4165939e91aa74e506f1426b515734d7349684b5ebd8ebe1a223f9",
+    "gateway/src/sensor_monitor/cli.py": "5e8cedc2d30279c5a9b34b25c083ed92fbd912f1f1a045e026e21a0ddffc907b",
+    "gateway/src/sensor_monitor/config.py": "0f1c1ba83fdf5477e4d249db8e257419a76cf792d86ceb2dd07dc14a95374ee6",
+    "gateway/src/sensor_monitor/firmware_source.py": "9f8b70085bcac3201de769a5acabca85a02086a55fae5da6ff679d71d74379f4",
+    "gateway/src/sensor_monitor/hub.py": "1954c3022129e113518583f04c633dedf56f23ebbca4efb0104dada475850850",
+    "gateway/src/sensor_monitor/logging_setup.py": "16c7256d1504bd1e8c27a26352961076187a35ae42d610de6263e85872c536f6",
+    "gateway/src/sensor_monitor/models.py": "66c8435145e7301e7e1139d655aa4ec6cb7e36835cd7aae86ecaee98ab397bf7",
+    "gateway/src/sensor_monitor/protocol.py": "da0443037df96ddff1ccba40c430967044d64d1941176e8337848ab93881acea",
+    "gateway/src/sensor_monitor/shared_protocol.py": "cfd605864c80bb277fe0a370545a2e9eaa77ecd53f215e28d8da19adbb7ad10b",
+    "gateway/src/sensor_monitor/sources.py": "869f20cadfe80365676749d4ee904393284bbd42cefbea3a87e72749507f7fee",
+    "gateway/src/sensor_monitor/store.py": "e653ade577b41a01e60b39321875710bcd70beb2a5223e234d1c953fc5445a2a"
+  },
+  "binary_sha256": "993888be38cc5a05e9d28e6a65244eb8172b32601d3fe9a8085e5a82d491ab74",
+  "scope": "real C subprocess reboots, scripted stream interruptions, real loopback WebSockets; memory covers server and bounded test clients in one process; no physical UART"
+}

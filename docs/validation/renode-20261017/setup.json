@@ -1,0 +1,10 @@
+{
+  "version": "1.17.0",
+  "release": "https://github.com/renode/renode/releases/tag/v1.17.0",
+  "package_sha256": "18bcf145422039e8702c3e5f9864c7787561bfd5deb7a3ee6e168ecf19e2b9db",
+  "executable": "build/tools/renode-1.17.0/renode_1.17.0-portable/renode.exe",
+  "version_check": "passed; .NET 8.0.10",
+  "model_load_check": "passed; project STM32F401RE platform, MPU6050, BMP280 and bounded UART bridge",
+  "project_firmware_executed": true,
+  "project_validation": "report.json"
+}

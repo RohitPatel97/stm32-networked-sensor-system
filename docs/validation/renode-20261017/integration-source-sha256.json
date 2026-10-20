@@ -1,0 +1,12 @@
+{
+  "emulation/renode/HubSensors.cs": "853e9544f40290395961f6caa6435a3425f6148c2957232c94de260c7184c6a4",
+  "emulation/renode/HubTerminal.cs": "7e7f10dabed5d6400ead4befd3b0e0fd906144559028060c0fabee450b124448",
+  "emulation/renode/stm32f401re.repl": "86a04df6ae3bcf1719a57bdc2682488537450acdeb29a119427c420807864f92",
+  "scripts/renode_demo.py": "8a7c238529b6cacf8cb2c85cb4f526c739d55b28f5f6f0af62fd91aafe31131d",
+  "scripts/renode_runtime.py": "004313b272f80c6aa70555a2fe722d9af7efd9d3cd8c103a26d5dba2dba24028",
+  "scripts/test_renode.py": "f6956db8514ea94111db9a20446a8db80ee0f26b7e9cf8718ebec50466243ba2",
+  "gateway/src/sensor_monitor/tcp_source.py": "a0a5ea236f0eed28684c8e55277a9a3ecd15312fdf36e422365362b5db1d3b4c",
+  "firmware/src/telemetry.c": "2dc9de8796639be27036555ed5545b44bd41a589b338ae5d71df5c673ea80fe5",
+  "firmware/target/stm32f401re/Core/Src/app_freertos.c": "0800889f71da8c526ea75fd29663586192c2b92ae37ee5613b534b326f5c1c66",
+  "gateway/src/sensor_monitor/store.py": "36c65e5537aefce5fc0826daf2de852a40e03b3ed1142fbdfef7840fe32c6e1a"
+}

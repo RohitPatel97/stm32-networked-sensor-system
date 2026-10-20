@@ -1,0 +1,25 @@
+{
+  "sandbox": "C:\\Users\\sr116\\Desktop\\Resume\\Projects\\stm32-networked-sensor-system\\build\\sandbox-20261017-rxotbc23",
+  "isolation": "separate source tree, new venv, fresh UBSan Debug build; host process isolation only, not an OS sandbox",
+  "original_combined_files_modified": [
+    "gateway/src/sensor_monitor/app.py"
+  ],
+  "new_regression_test": "tests/integration/test_websocket_startup.py",
+  "tested_source_files_match_combined": 109,
+  "coverage": {
+    "covered_lines": 1071,
+    "num_statements": 1097,
+    "percent_covered": 96.2223806129722,
+    "percent_covered_display": "96",
+    "missing_lines": 26,
+    "excluded_lines": 5,
+    "percent_statements_covered": 97.62989972652689,
+    "percent_statements_covered_display": "98",
+    "num_branches": 306,
+    "num_partial_branches": 27,
+    "covered_branches": 279,
+    "missing_branches": 27,
+    "percent_branches_covered": 91.17647058823529,
+    "percent_branches_covered_display": "91"
+  }
+}

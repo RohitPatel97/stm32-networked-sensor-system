@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Live STM32 sensor telemetry dashboard" />
+    <title>STM32 Networked Sensor System</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2307100f'/%3E%3Cpath d='M7 18h4l2-7 5 13 3-9 2 3h3' fill='none' stroke='%236ee7b7' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="/static/styles.css?v=1.1.0" />
+  </head>
+  <body>
+    <header class="shell masthead">
+      <div>
+        <p class="eyebrow">STM32 / RASPBERRY PI GATEWAY</p>
+        <h1>STM32 Sensor System</h1>
+      </div>
+      <div id="connection" class="connection"><span></span> Connecting</div>
+    </header>
+
+    <main class="shell">
+      <section class="metrics" aria-label="Live telemetry summary">
+        <article><span>Temperature</span><strong id="temperature">--</strong><small>C</small></article>
+        <article><span>Pressure</span><strong id="pressure">--</strong><small>hPa</small></article>
+        <article><span>Frames</span><strong id="samples">0</strong><small>accepted</small></article>
+        <article><span>Device</span><strong id="device-state">waiting</strong><small id="device-id">no signal</small></article>
+      </section>
+
+      <section class="grid">
+        <article class="panel full-width">
+          <div class="panel-heading"><h2>Firmware diagnostics</h2><span>Source: <b id="source-name">connecting</b></span></div>
+          <dl class="diagnostics">
+            <div><dt>MPU6050</dt><dd id="imu-status">waiting</dd></div>
+            <div><dt>BMP280</dt><dd id="baro-status">waiting</dd></div>
+            <div><dt>Measurements</dt><dd id="sample-state">waiting</dd></div>
+            <div><dt>Sample age</dt><dd id="sample-age">n/a</dd></div>
+            <div><dt>Acceleration (g)</dt><dd id="acceleration">n/a</dd></div>
+            <div><dt>Gyroscope (deg/s)</dt><dd id="gyro">n/a</dd></div>
+            <div><dt>Altitude (m)</dt><dd id="altitude">n/a</dd></div>
+            <div><dt>Boot ID</dt><dd id="boot-id">n/a</dd></div>
+            <div><dt>Frame sequence</dt><dd id="frame-sequence">n/a</dd></div>
+            <div><dt>Sample sequence</dt><dd id="sample-sequence">n/a</dd></div>
+            <div><dt>I2C errors / total</dt><dd id="i2c-total">0</dd></div>
+            <div><dt>I2C retries / total</dt><dd id="i2c-retries">0</dd></div>
+            <div><dt>Queue drops / total</dt><dd id="queue-total">0</dd></div>
+            <div><dt>Deadline misses / total</dt><dd id="deadlines">0</dd></div>
+            <div><dt>Acquire / process</dt><dd id="timing">n/a</dd></div>
+            <div><dt>Watchdog</dt><dd id="watchdog">unknown</dd></div>
+            <div><dt>Reset flags</dt><dd id="reset-flags">unknown</dd></div>
+          </dl>
+        </article>
+        <article class="panel chart-panel">
+          <div class="panel-heading">
+            <div><p class="eyebrow">ROLLING WINDOW</p><h2>Temperature</h2></div>
+            <span>Last 60 frames</span>
+          </div>
+          <canvas id="chart" width="900" height="320" aria-label="Temperature history chart"></canvas>
+        </article>
+
+        <article class="panel">
+          <div class="panel-heading">
+            <div><p class="eyebrow">FAULT PATHS</p><h2 id="controls-title">Simulator controls</h2></div>
+          </div>
+          <div class="fault-controls" id="fault-controls">
+            <button data-mode="normal" class="active">Normal</button>
+            <button data-mode="i2c_error">I2C error</button>
+            <button data-mode="over_temperature">Over-temp</button>
+            <button data-mode="queue_pressure">Queue pressure</button>
+            <button data-mode="disconnected">Disconnect</button>
+          </div>
+          <div class="fault-controls" id="renode-controls" hidden>
+            <button data-action="rest">Stationary / restore sensors</button>
+            <button data-action="motion">Tilt and rotate</button>
+            <button data-action="altitude">Change pressure / altitude</button>
+            <button data-action="imu_off">Disconnect MPU6050</button>
+            <button data-action="baro_off">Disconnect BMP280</button>
+            <button data-action="both_off">Disconnect both sensors</button>
+            <button data-action="reboot">Reboot MCU</button>
+            <button data-action="uart">Reconnect UART</button>
+            <button data-action="watchdog">Stall acquisition / watchdog reset</button>
+          </div>
+          <p class="hint" id="source-hint">Controls are available for the Python application simulator.</p>
+          <p class="hint" id="demo-status" role="status" aria-live="polite" hidden></p>
+        </article>
+
+        <article class="panel full-width">
+          <div class="panel-heading">
+            <div><p class="eyebrow">EVENT STREAM</p><h2>Recent alerts</h2></div>
+            <span id="alert-count">0 events</span>
+          </div>
+          <ol id="alerts" class="alerts"><li class="empty">No alert transitions yet.</li></ol>
+        </article>
+      </section>
+    </main>
+    <script src="/static/app.js?v=1.1.0" defer></script>
+  </body>
+</html>

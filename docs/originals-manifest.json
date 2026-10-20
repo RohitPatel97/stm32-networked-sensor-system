@@ -1,0 +1,582 @@
+[
+  {
+    "project": "freertos-sensor-hub",
+    "path": ".gitattributes",
+    "sha256": "0F70B26C5331922A89D623A7FB71F0FA48D267F6A35C3DDE50478282A5A9B3FE"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": ".github/workflows/ci.yml",
+    "sha256": "BEB4BEF7BDBBEC14926831C2C5A2D24C6BDBE336C12EA74F960D8D566B6EFDB8"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": ".gitignore",
+    "sha256": "F4AADB6D20D437F3C66FC616B52F6C136232AC16B3310D40E425F53CDCE2B0EA"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "CHANGELOG.md",
+    "sha256": "74BDFD3A23B2FE292D3399EA5540A55389637CB0D5E91A998AEE2119422A845E"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "cmake/arm-none-eabi.cmake",
+    "sha256": "68736F096D2862736ED28D03C1A537F952543265A12AB1A8386A0FAD60742BF0"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "CMakeLists.txt",
+    "sha256": "9458115B943565733C995E82A21634E8CC23166EFB4A1C45461FC61710831CB7"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "CONTRIBUTING.md",
+    "sha256": "032DAC843549D0DB57F843B2DE4F8244EC875FBC134C589EC274CF2D459D261B"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "docs/ARCHITECTURE.md",
+    "sha256": "41A0FFFA2E92EC599D3635DBF7CAA6010549EF005FF0A96911AB28E7EE8BCFA9"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "docs/PROTOCOL.md",
+    "sha256": "AA4B7F693BDCC1F1E8B1FA01F013B3C929EC0BC6D11AB5DE7C1C04ADE2382676"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "docs/SIMULATOR.md",
+    "sha256": "9009915A9C7F2D6E1453E69688F4B7E93E676286F4CF4F8AF44ECF966CC2DB08"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "docs/VALIDATION.md",
+    "sha256": "5ACD13162CECDC3DE349CB04155EABA38B39D10C66E1AD2035077911DC4A4781"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "examples/sample_telemetry.ndjson",
+    "sha256": "69D27192706BAE1F2AFC28A1EDC7A3907052624BA6A1148AAD96635E1AB6725F"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "include/sensor_hub/bmp280.h",
+    "sha256": "8A61B657C248788F7E5799500DB275B979309C08E9EFA27AE035B3A25C6E0960"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "include/sensor_hub/config.h",
+    "sha256": "EC62780784B85A9A1329D3078205AF7F433A567D81035FBA3DEED323E261EB85"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "include/sensor_hub/health.h",
+    "sha256": "F09E47F628EFFC671F7649CFCEEF2057CBBB5767502C6E91D3C20C488D3B2ED3"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "include/sensor_hub/i2c_bus.h",
+    "sha256": "37CB5BC4FA9684D24FF78C3BD591671D5A042CD9A2DE0A88EDD525ECA7787791"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "include/sensor_hub/mpu6050.h",
+    "sha256": "99C072ACB61256D40FFC6E3C2972C1E98A929F74EE7E614F4B1433E1C2151C54"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "include/sensor_hub/processing.h",
+    "sha256": "A3A69A73807FA0E36D4C848E7416080A350C94D436FDC8C23BE2F2A0C3D01B7F"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "include/sensor_hub/sensor_state.h",
+    "sha256": "B1B3ED986C80CC73626C73497D03838B4207EB4BDA4AE3728515771FF3268BFD"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "include/sensor_hub/telemetry.h",
+    "sha256": "085E8E82958FE9A3A920BE07B626F9D0BE831755CDD196FEDDA397E5C8076E0D"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "include/sensor_hub/types.h",
+    "sha256": "4DCF2E8EA0CF9139C9DB3C48D5DD7FB941916D3E63B82558F9F8E9E3B2AB2C62"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "LICENSE",
+    "sha256": "08F35BE62199AC85E0FD48C7F7596D371B38B7A0300317490A139E12CD2D1760"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "README.md",
+    "sha256": "8F811831F0BDA20A0C78AA5A7801F0F51C5FE13A19DFC62A4A1481F58C99BC55"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "requirements.txt",
+    "sha256": "E0D43A66635CDA4ECD9DA590C057181632E7B8AFD41C8407CF2AA46F5BC70EB9"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "sim/host_sim.c",
+    "sha256": "F3A0BF1A435CA3B2D85ED3B1BC1CEF7C1BDE65A2B002DB55E5C74DF80F6455D7"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "src/bmp280.c",
+    "sha256": "45ECB84FF8AC608C84A774FF8EDE27D20F922620E316627197D3C236959E579C"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "src/health.c",
+    "sha256": "57D575DA68F3616E8CBBD4FDED2C9AE527399FE30B10C66ABE7F3869FAB1A98F"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "src/i2c_bus.c",
+    "sha256": "131097B39214E3B13DA220EFAC5E720B1314F9BCB3C8D8517689F5A04C9B9DDD"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "src/mpu6050.c",
+    "sha256": "ED1F4130F947DB500F88F209D016494852E1229E9D51E1CE3018510575AFEE60"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "src/processing.c",
+    "sha256": "37BA641448654136ADAFF481F46E7D7F24FB95C80B617C2F9C87A32EE2643AEB"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "src/sensor_state.c",
+    "sha256": "AA903BD7BE8A343C9822DEAA415B0ECFF456E1C0524BC6DA0630290BD3342110"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "src/telemetry.c",
+    "sha256": "DA745DA9834370537B2D35D75DAC5C05BCCBE00DAC22FC09F1C2C125F02C5961"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "target/stm32f401re/CMakeLists.txt",
+    "sha256": "BBDBBBDF1B0A79E68D4002EF2BCCB60CBA2AA24964C3468CB4617B7BF9161BE6"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "target/stm32f401re/Core/Inc/app_freertos.h",
+    "sha256": "62ED673A65EE746BE0DEE898E57690515EB5EF20F900138337093C6AC2147397"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "target/stm32f401re/Core/Inc/FreeRTOSConfig.h",
+    "sha256": "81CE724A1AFFB4682874FB404AB115441FDEA096F394E76C805327574B10F10C"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "target/stm32f401re/Core/Inc/hub_stm32_port.h",
+    "sha256": "00A2F325DC8FD51028C2F44ADE3194C6AD987DE4FF30D172ECFA256CB7C561D1"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "target/stm32f401re/Core/Inc/main.h",
+    "sha256": "1E3282575F6FBF2832201C84F7F5886FCD03383956035DDFD875518BB9345F55"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "target/stm32f401re/Core/Inc/stm32f4xx_hal_conf.h",
+    "sha256": "05000D8536AE2ADE31BEA40711ADD55ACAED3DE158FFEB4293EDF81FC8F4D001"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "target/stm32f401re/Core/Src/app_freertos.c",
+    "sha256": "21ED10564FC01200F8BC6A9244633B036C5C24E2FF90AF3093FB91150788C33B"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "target/stm32f401re/Core/Src/hub_stm32_port.c",
+    "sha256": "51AFC0A6DCA15A4FFDA352A2B6BCAE80AED46A22118641D88816DFAF5D745879"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "target/stm32f401re/Core/Src/main.c",
+    "sha256": "8CFE96F91BD49858C4B3AB683D16ED888AD3D23162B853E79296AB6A15C7B659"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "target/stm32f401re/Core/Src/syscalls.c",
+    "sha256": "BE5E9B72C3B6352A1BB351825E1217155D8C21881D2608DC059700CBC698C062"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "target/stm32f401re/README.md",
+    "sha256": "CB49AA8AA22B2696D38326CA5EBDD122D81B2A5E9E1D2E65A0616DBA5BFEF8BD"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "target/stm32f401re/STM32F401RE.ld",
+    "sha256": "9D746DFCAB1FD3CB2523ECFD174C6D04A7D1A1A81FEEB432AF0C1B0E03B1B484"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "tests/c/test_core.c",
+    "sha256": "8563A81FABFE5CB77541FAAF2DAF69FCD45480E0A37695952A9527718DEAF4FF"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "tests/test_dashboard.py",
+    "sha256": "344A202A3C5774DB722F765EEDA22A0B81E998CC48E3D375F1AB0019A612138E"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "tests/test_python_tools.py",
+    "sha256": "0E1BBD5602D59E0C10150277859A363EB9D05C7C95687A605B9EDC1ABB6A8920"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "tests/test_sim_cli.py",
+    "sha256": "19CB879755DBF42315D18E720E43CF41F419CF179279CD81BDCE526064C998C1"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "tests/test_telemetry_parser.py",
+    "sha256": "9294FFB8F3DBAF3F1EF247FA65D30A415C0E3D18F167EFEFB8B2A76EC638E668"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "tools/__init__.py",
+    "sha256": "017295DEE0C7084544116C6F9DA4211FAD3931A53E910F77A4C953A21B83AAF5"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "tools/check_firmware.py",
+    "sha256": "9667984BC286B2699B7C3D8B88A7B32EDA7248FA116016564E96F91C6A13C58A"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "tools/dashboard.py",
+    "sha256": "8F57A04E6FD132FE87D9148F648AF19247ED73BFE30B43B8C85686A1CB20AA11"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "tools/reference_sim.py",
+    "sha256": "967014E9A9EAD7C79BB7EAD7884939F76A4EEC72FC67C1560C1997D1C52A3695"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "tools/telemetry.py",
+    "sha256": "A78849707A3E7F475E28F5B43A782EDEBC95BBD3F58730364FDFDDE3F5309FF1"
+  },
+  {
+    "project": "freertos-sensor-hub",
+    "path": "WORKFLOW.md",
+    "sha256": "FBFCCD59080C81B48F910D6F49DF47584E8E4AE5ABB5E0B8079453B88ABA7ACD"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": ".env.example",
+    "sha256": "2732F4716F443A9D5BAC1402A20DD877FA41BD27DA78F1120F974FD37044D459"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": ".gitattributes",
+    "sha256": "84D748B6D810A033F9D57D94ADC8C9F1A02FB93334E21AA58A92FEF0254EE150"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": ".github/workflows/ci.yml",
+    "sha256": "9BB195BBE6FED5BF1218118E0C9BC69095FCAA3FD956708FB673FBAB7B46D1F0"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": ".gitignore",
+    "sha256": "AC9FC3184DFC110F57E38544BB13866315412307084057EA14A614E9E1D3054D"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "CHANGELOG.md",
+    "sha256": "81BAAE3D3B9569FAC3C18EC62BDAA310875485C1CB0F2AB30548899338109616"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "compose.yaml",
+    "sha256": "FB24AD86FA4AF2A74A70853EA89EB8C05CBA35AE49CAAB49A49722DC0825DE8D"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "CONTRIBUTING.md",
+    "sha256": "79A51F257B99686427212C6887F099F24732510EDFFCC2ADC881571BD66A00C7"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "deploy/sensor-monitor.service",
+    "sha256": "5FB9EA5D0934B824AA4B2650642AB6ACAFBD8F39F7BD2195B815BB8CB6AB2A83"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "Dockerfile",
+    "sha256": "526EE54D366E54F82F391BE850F9E6C6889614FA18C80782A8C5E4B85DEF1C7C"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "docs/BRIDGE.md",
+    "sha256": "AD7EA05F58EB694847D800D5AA4C6F474C64175DC18F4D47C4251F79E0C22059"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "docs/dashboard.png",
+    "sha256": "00AF219E92265BBB7B3AED8931501886BEDD22C2FF98331A743CDE458B01F033"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "docs/HARDWARE_VALIDATION.md",
+    "sha256": "9067DF2C75A370056C8BC2AD6856B88BF23725CFE4D3F911B0DE07C08E5AC7A5"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "docs/PROTOCOL.md",
+    "sha256": "A97B20856D5928E67D86512E4751D4C55262B2DB70368B87CBC11D9630297C71"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "docs/SOAK_TEST.md",
+    "sha256": "F1679FF627C9FDA836D4BDD8B32C5221AE02AFE401F444E2BA0E98965CE67058"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "docs/validation/host-api-20261012.json",
+    "sha256": "375CBE25D3D3F30682B24D478AF4EB498D5AE0A21FE377BA7F03FF60D4972103"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "docs/validation/host-soak-20261012.json",
+    "sha256": "0A4B9814C0CC3A2AC692E51C73FB287C620C4C7B929F46319F66992ED45A52DE"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "examples/freertos_telemetry.ndjson",
+    "sha256": "69D27192706BAE1F2AFC28A1EDC7A3907052624BA6A1148AAD96635E1AB6725F"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "examples/telemetry.jsonl",
+    "sha256": "5C155F083231AF053744352670162820E070BF850763B733557300B1EA87A828"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "LICENSE",
+    "sha256": "08F35BE62199AC85E0FD48C7F7596D371B38B7A0300317490A139E12CD2D1760"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "Makefile",
+    "sha256": "B60BCA270F2EA3E2B87CF96DFA959CFD27EFAF7170D94E79062C257C92AC4034"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "pyproject.toml",
+    "sha256": "7F51FAE70F70D50F3C947BEA63FA7F874E49E48ACD468C2AFD9812AC02486DBD"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "README.md",
+    "sha256": "AC753CD44F6D804A083781305432400957D0642BBCB8CAA8CCBFEC1FD0D96573"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "scripts/install_service.sh",
+    "sha256": "57B6D2E142B388B4B6218060113E66C18FB4265989D21D18263F34A4DBEFC1F7"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "scripts/smoke_test.py",
+    "sha256": "3685F2DAEA3D8940F7073E1A7C49FCDF77FD81B93E6B641FCAE6780652998A3C"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "scripts/soak_test.py",
+    "sha256": "FA0F98FE33C228EA77E9B581A69EB4EB12DB981B1F8BD54FDC7FD7ABEDC2C5DE"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "SECURITY.md",
+    "sha256": "FAABC138DF8A949217F292FEF44CCB21B64673AEA61F50D9A8A686E96F9E4386"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "src/sensor_monitor/__init__.py",
+    "sha256": "287F2226A3FA12D03CC64432A876FB4F16BDBEF6CAAB2EDC463D2A8711605801"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "src/sensor_monitor/__main__.py",
+    "sha256": "935A1C1166B0C1EA35A82256345000BF2C73DED718D77773BC27A71ECCE28F7D"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "src/sensor_monitor/alerts.py",
+    "sha256": "7185860C8D69C21CBD72F001FC41E673EFB04FEA104330B979806435D5CE0497"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "src/sensor_monitor/app.py",
+    "sha256": "BC741AE34ECDA3DBCF7F73BB0D701270D192E96A6DAB5C0C0060BCCB15448DB4"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "src/sensor_monitor/bridge.py",
+    "sha256": "EDC81A4ACAED8E2E90381930E5D398792F512772B923D31E213336102042DFD4"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "src/sensor_monitor/capture.py",
+    "sha256": "9686C554EC4165939E91AA74E506F1426B515734D7349684B5EBD8EBE1A223F9"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "src/sensor_monitor/cli.py",
+    "sha256": "5E8CEDC2D30279C5A9B34B25C083ED92FBD912F1F1A045E026E21A0DDFFC907B"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "src/sensor_monitor/config.py",
+    "sha256": "0F1C1BA83FDF5477E4D249DB8E257419A76CF792D86CEB2DD07DC14A95374EE6"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "src/sensor_monitor/hub.py",
+    "sha256": "1954C3022129E113518583F04C633DEDF56F23EBBCA4EFB0104DADA475850850"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "src/sensor_monitor/logging_setup.py",
+    "sha256": "16C7256D1504BD1E8C27A26352961076187A35AE42D610DE6263E85872C536F6"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "src/sensor_monitor/models.py",
+    "sha256": "E8F3B83828444F8E594CDC421E8979DE7301FCF4139EB39D344561F348E9CAD1"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "src/sensor_monitor/protocol.py",
+    "sha256": "D4EB658349326699EE905234FD237EED3BB3124BB3FCB697B9EE87C2DDA91FCC"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "src/sensor_monitor/sources.py",
+    "sha256": "869F20CADFE80365676749D4EE904393284BBD42CEFBEA3A87E72749507F7FEE"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "src/sensor_monitor/store.py",
+    "sha256": "D7F8DF4C8CC80B321D1EDB6A52725458C574575A9A2EB1002125478045463BFA"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "src/sensor_monitor/web/app.js",
+    "sha256": "96C7E3FF4592BEFFFB2EAF1CD72BF451ADF3D3B443D48424AF92B5E24C056684"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "src/sensor_monitor/web/index.html",
+    "sha256": "6DC8C64B2D4ABA11D7F8D9C9B7E3DC0C7A544619F131739E39D8514D852F0FE8"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "src/sensor_monitor/web/styles.css",
+    "sha256": "2ACC7276361059E1BEBDBE0F1EA89D59AB662C490DAE621183DC88458B539AA3"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "tests/__init__.py",
+    "sha256": "7A523B1548D8BB2854CE58AB41B504EAA671E83D7ADA49494676FB81495228F1"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "tests/conftest.py",
+    "sha256": "34BE51B730243ED20B2AFEFD1538D1BAD0777AEB2F14CEB43171A5407C50A510"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "tests/helpers.py",
+    "sha256": "3540B70A3887D8EC35DB665CA8188F0E912EE321AE932020EB546A81F1F53D55"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "tests/test_alerts.py",
+    "sha256": "806133316165556B738D3F32F42E737477BB0E46384B7D9A1C40E7697CEA76FD"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "tests/test_api.py",
+    "sha256": "1D9764C4ACD20FF183C698BB71BF829D1255C6C76CD189B32B5A599478317C8E"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "tests/test_bridge_cli.py",
+    "sha256": "FD329940104C2B3C75623422B97A25434EAA57C7E7FEB92F464EA2621B6568E5"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "tests/test_bridge.py",
+    "sha256": "3E3DF0F1A63821A6198B7CDEC758FA09F37A23112C6AF56465C7D623350409F1"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "tests/test_cli.py",
+    "sha256": "98627051AFD9EFBA242D7796466610D91BEF0C92D36F80A0E9251C347F27F2A1"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "tests/test_config.py",
+    "sha256": "F3A3894DA6A168A82EDBDF264AE202A8F63A33C8B9C4BA06A48B37809D2A91D2"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "tests/test_hub.py",
+    "sha256": "79BAD689D3DB1F19216B549FCDC5B27A1ACEA407594091BB1A541345895B5B2B"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "tests/test_protocol.py",
+    "sha256": "3D4AE8C70BFAC2C4D5C150A4964A7494149DE63E95C2BB4DB645539A03AC0244"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "tests/test_serial_reconnect.py",
+    "sha256": "39E769DE4D6C985042FF9C2DD3C001419CAAA7FDCF505096084F5E76EE51F662"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "tests/test_sessions.py",
+    "sha256": "D6D66A3358CA70FF389728BCF781F709C4C5864EDE420831611837C5CFCA55FD"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "tests/test_smoke.py",
+    "sha256": "7DACD6588913D8588815D811319041AA9139D484B04EC0A8F259E0C37294453F"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "tests/test_soak.py",
+    "sha256": "3DB1688BB3F9B77D6D3328DEE9ECA6B49970A89035835FA49C0ADEB5DE2B42CB"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "tests/test_sources.py",
+    "sha256": "3AD09FCAEE99081A8066354A62424740B2C6A907504003BF79C4D3E73235FF7B"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "tests/test_store.py",
+    "sha256": "112A96F174BAA57F5142D431B4BCF57F6471D53E6169FA5E89C03A28F47254FA"
+  },
+  {
+    "project": "networked-embedded-sensor-monitor",
+    "path": "WORKFLOW.md",
+    "sha256": "D8D904B4F66518009DEB22651C6C36287C403A0AC8F9E15A1378490E04515394"
+  }
+]

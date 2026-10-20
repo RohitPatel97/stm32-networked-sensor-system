@@ -1,0 +1,3 @@
+Processing c:\users\sr116\desktop\resume\projects\stm32-networked-sensor-system\build\sandbox-20261017-rxotbc23\evidence\wheels\stm32_sensor_gateway-3.0.0-py3-none-any.whl
+Installing collected packages: stm32-sensor-gateway
+Successfully installed stm32-sensor-gateway-3.0.0

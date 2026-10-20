@@ -1,0 +1,57 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  host-validation:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure C build
+        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+      - name: Build C core and simulator
+        run: cmake --build build --parallel
+      - name: Run C, simulator, and Python tooling tests
+        run: ctest --test-dir build --output-on-failure
+      - name: Replay a dashboard capture
+        run: python3 tools/dashboard.py --file examples/sample_telemetry.ndjson --no-ansi --max-frames 1 > /dev/null
+      - name: Check Python syntax
+        run: python3 -m compileall -q tools tests
+
+  stm32-build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pinned Arm GNU 13.2.Rel1
+        run: |
+          curl --fail --location --retry 3 https://developer.arm.com/-/media/Files/downloads/gnu/13.2.rel1/binrel/arm-gnu-toolchain-13.2.rel1-x86_64-arm-none-eabi.tar.xz -o /tmp/arm-toolchain.tar.xz
+          echo '6cd1bbc1d9ae57312bcd169ae283153a9572bd6a8e4eeae2fedfbc33b115fdbb  /tmp/arm-toolchain.tar.xz' | sha256sum --check
+          tar -xf /tmp/arm-toolchain.tar.xz -C /tmp
+          echo '/tmp/arm-gnu-toolchain-13.2.Rel1-x86_64-arm-none-eabi/bin' >> "$GITHUB_PATH"
+      - name: Build and verify firmware with watchdog disabled and enabled
+        shell: bash
+        run: |
+          arm-none-eabi-gcc --version
+          for watchdog in OFF ON; do
+            cmake -S . -B "build/stm32-$watchdog" -G Ninja \
+              -DCMAKE_TOOLCHAIN_FILE=cmake/arm-none-eabi.cmake \
+              -DCMAKE_BUILD_TYPE=MinSizeRel -DHUB_BUILD_STM32=ON \
+              -DHUB_ENABLE_WATCHDOG="$watchdog" \
+              -DFETCHCONTENT_BASE_DIR="$PWD/build/target-deps"
+            cmake --build "build/stm32-$watchdog" --parallel 2 | tee "build/stm32-$watchdog/build.log"
+          done
+      - name: Upload linked images, maps, build logs, and stack reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: stm32f401re-firmware
+          if-no-files-found: error
+          path: |
+            build/stm32-*/target/stm32f401re/sensor_hub_firmware.*
+            build/stm32-*/build.log
+            build/stm32-*/**/*.su
+            build/stm32-*/target/stm32f401re/licenses/*

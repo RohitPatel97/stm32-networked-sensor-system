@@ -1,0 +1,56 @@
+{
+  "/healthz": {
+    "status": "ok",
+    "version": "3.0.0",
+    "source": "renode",
+    "frames_accepted": 1424,
+    "acquisition_running": true
+  },
+  "/api/v1/stats": {
+    "started_at": "2026-10-17T19:50:00.928131Z",
+    "frames_received": 1424,
+    "frames_accepted": 1424,
+    "parse_errors": 0,
+    "sequence_anomalies": 0,
+    "session_changes": 0,
+    "device_rejections": 0,
+    "websocket_clients": 1,
+    "websocket_drops": 0,
+    "source_reconnects": 0
+  },
+  "/api/v1/snapshot": {
+    "type": "snapshot",
+    "devices": [
+      {
+        "device_id": "stm32-36a14bb496de50b8316688e0-0",
+        "state": "online",
+        "last_seen": "2026-10-17T19:52:27.344325Z",
+        "age_seconds": 0.017,
+        "last_sequence": 1423,
+        "boot_id": 1,
+        "i2c_errors": 0,
+        "queue_drops": 0,
+        "watchdog_resets": null,
+        "detail": "telemetry is current",
+        "boot_id_decimal": "1",
+        "sample_age_seconds": 0.024,
+        "measurement_state": "current",
+        "mpu6050": "online",
+        "bmp280": "online"
+      }
+    ],
+    "alerts": [],
+    "stats": {
+      "started_at": "2026-10-17T19:50:00.928131Z",
+      "frames_received": 1424,
+      "frames_accepted": 1424,
+      "parse_errors": 0,
+      "sequence_anomalies": 0,
+      "session_changes": 0,
+      "device_rejections": 0,
+      "websocket_clients": 1,
+      "websocket_drops": 0,
+      "source_reconnects": 0
+    }
+  }
+}

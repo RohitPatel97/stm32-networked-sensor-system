@@ -1,0 +1,14 @@
+services:
+  sensor-monitor:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      SENSOR_MONITOR_SOURCE: simulator
+      SENSOR_MONITOR_HOST: 0.0.0.0
+    volumes:
+      - monitor-logs:/var/log/sensor-monitor
+    restart: unless-stopped
+
+volumes:
+  monitor-logs:

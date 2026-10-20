@@ -1,0 +1,13 @@
+Test project C:/Users/sr116/Desktop/Resume/Projects/stm32-networked-sensor-system/build/host
+    Start 1: boot_and_protocol_tests
+1/4 Test #1: boot_and_protocol_tests ..........   Passed    0.81 sec
+    Start 2: core_unit_tests
+2/4 Test #2: core_unit_tests ..................   Passed    0.08 sec
+    Start 3: simulator_integration_tests
+3/4 Test #3: simulator_integration_tests ......   Passed    2.03 sec
+    Start 4: python_tool_tests
+4/4 Test #4: python_tool_tests ................   Passed    0.56 sec
+
+100% tests passed out of 4
+
+Total Test time (real) =   3.49 sec

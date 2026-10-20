@@ -1,0 +1,304 @@
+{
+  "readiness": {
+    "status": "ok",
+    "version": "3.0.0",
+    "source": "firmware",
+    "frames_accepted": 1140,
+    "acquisition_running": true
+  },
+  "stats": {
+    "started_at": "2026-10-12T18:42:46.370047Z",
+    "frames_received": 1140,
+    "frames_accepted": 1140,
+    "parse_errors": 0,
+    "sequence_anomalies": 0,
+    "session_changes": 9,
+    "device_rejections": 0,
+    "websocket_clients": 1,
+    "websocket_drops": 0,
+    "source_reconnects": 9
+  },
+  "devices": [
+    {
+      "device_id": "sim-hub",
+      "state": "degraded",
+      "last_seen": "2026-10-12T18:44:50.681716Z",
+      "age_seconds": 0.04,
+      "last_sequence": 59,
+      "boot_id": 10,
+      "i2c_errors": 301,
+      "queue_drops": 0,
+      "watchdog_resets": null,
+      "detail": "device reports a fault condition",
+      "boot_id_decimal": "10",
+      "sample_age_seconds": 0.04,
+      "measurement_state": "current",
+      "mpu6050": "online",
+      "bmp280": "offline"
+    }
+  ],
+  "history_count": 100,
+  "latest_reading": {
+    "schema_version": 3,
+    "boot_id": "10",
+    "device_id": "sim-hub",
+    "sequence": 60,
+    "uptime_ms": 6100,
+    "temperature_c": null,
+    "pressure_hpa": null,
+    "accel_g": [
+      -0.1389,
+      0.1,
+      0.9889
+    ],
+    "battery_v": null,
+    "i2c_errors": 311,
+    "queue_drops": 0,
+    "watchdog_resets": null,
+    "firmware": {
+      "schema_version": 3,
+      "type": "telemetry",
+      "device_id": "sim-hub",
+      "boot_id": 10,
+      "frame_seq": 60,
+      "uptime_ms": 6100,
+      "seq": 609,
+      "ts_us": 6100000,
+      "sample_present": true,
+      "sensors": {
+        "mpu6050": "online",
+        "bmp280": "offline"
+      },
+      "imu": {
+        "accel_g": [
+          -0.1389,
+          0.1,
+          0.9889
+        ],
+        "gyro_dps": [
+          -2.084,
+          1.389,
+          -0.695
+        ],
+        "temperature_c": 24.73
+      },
+      "baro": null,
+      "health": {
+        "i2c_retries": 622,
+        "i2c_errors": 311,
+        "queue_drops": 0,
+        "deadline_misses": 0,
+        "watchdog": "fed",
+        "watchdog_enabled": false,
+        "reset_flags": 0
+      },
+      "timing": {
+        "acquisition_us": 126,
+        "processing_us": 31
+      }
+    },
+    "received_at": "2026-10-12T18:44:50.765859Z"
+  },
+  "recent_alerts": [
+    {
+      "id": "69c32d43-528d-42f7-b740-d90e0e028238",
+      "device_id": "sim-hub",
+      "code": "barometer_unavailable",
+      "severity": "warning",
+      "message": "Barometer data unavailable",
+      "active": true,
+      "observed_value": null,
+      "created_at": "2026-10-12T18:44:47.437448Z"
+    },
+    {
+      "id": "e4832c7d-f6be-46e7-bcdc-d483cfdc8455",
+      "device_id": "sim-hub",
+      "code": "i2c_errors",
+      "severity": "warning",
+      "message": "Device reports 1 I2C errors",
+      "active": true,
+      "observed_value": 1,
+      "created_at": "2026-10-12T18:44:47.437448Z"
+    },
+    {
+      "id": "e6f5da3c-fcd1-4a6c-b757-30edec88df83",
+      "device_id": "sim-hub",
+      "code": "i2c_errors",
+      "severity": "info",
+      "message": "No new I2C errors in the recovery window",
+      "active": false,
+      "observed_value": 400,
+      "created_at": "2026-10-12T18:44:39.801665Z"
+    },
+    {
+      "id": "148adcc1-0aa1-47d2-b5f9-dd82f653a10c",
+      "device_id": "sim-hub",
+      "code": "barometer_unavailable",
+      "severity": "info",
+      "message": "Recovered: Barometer data unavailable",
+      "active": false,
+      "observed_value": null,
+      "created_at": "2026-10-12T18:44:38.712538Z"
+    },
+    {
+      "id": "2089a93a-097b-44fd-a52b-a3f49aab2a0f",
+      "device_id": "sim-hub",
+      "code": "barometer_unavailable",
+      "severity": "warning",
+      "message": "Barometer data unavailable",
+      "active": true,
+      "observed_value": null,
+      "created_at": "2026-10-12T18:44:34.337719Z"
+    },
+    {
+      "id": "5c5f5c24-6f9a-42da-91d9-b2642701cf7c",
+      "device_id": "sim-hub",
+      "code": "i2c_errors",
+      "severity": "warning",
+      "message": "Device reports 1 I2C errors",
+      "active": true,
+      "observed_value": 1,
+      "created_at": "2026-10-12T18:44:34.337719Z"
+    },
+    {
+      "id": "2829f5e1-09a9-4148-9100-5f9f26d4c709",
+      "device_id": "sim-hub",
+      "code": "i2c_errors",
+      "severity": "info",
+      "message": "No new I2C errors in the recovery window",
+      "active": false,
+      "observed_value": 400,
+      "created_at": "2026-10-12T18:44:26.694465Z"
+    },
+    {
+      "id": "e42f3f66-29e0-4ce7-93eb-bee319f5ae1c",
+      "device_id": "sim-hub",
+      "code": "barometer_unavailable",
+      "severity": "info",
+      "message": "Recovered: Barometer data unavailable",
+      "active": false,
+      "observed_value": null,
+      "created_at": "2026-10-12T18:44:25.605732Z"
+    },
+    {
+      "id": "ce88d52b-082e-497d-ae8b-4bf3939ab4ab",
+      "device_id": "sim-hub",
+      "code": "barometer_unavailable",
+      "severity": "warning",
+      "message": "Barometer data unavailable",
+      "active": true,
+      "observed_value": null,
+      "created_at": "2026-10-12T18:44:21.237245Z"
+    },
+    {
+      "id": "1aad4b89-3494-48a9-98e0-1dfad491b194",
+      "device_id": "sim-hub",
+      "code": "i2c_errors",
+      "severity": "warning",
+      "message": "Device reports 1 I2C errors",
+      "active": true,
+      "observed_value": 1,
+      "created_at": "2026-10-12T18:44:21.237245Z"
+    },
+    {
+      "id": "6fe9ad4e-ca39-4279-ac45-b82b69a70368",
+      "device_id": "sim-hub",
+      "code": "i2c_errors",
+      "severity": "info",
+      "message": "No new I2C errors in the recovery window",
+      "active": false,
+      "observed_value": 400,
+      "created_at": "2026-10-12T18:44:13.566177Z"
+    },
+    {
+      "id": "06221ee0-bb48-4811-a173-8087bc1fd126",
+      "device_id": "sim-hub",
+      "code": "barometer_unavailable",
+      "severity": "info",
+      "message": "Recovered: Barometer data unavailable",
+      "active": false,
+      "observed_value": null,
+      "created_at": "2026-10-12T18:44:12.475055Z"
+    },
+    {
+      "id": "e368bf86-cc78-4b63-a045-a7d9a9e7a7aa",
+      "device_id": "sim-hub",
+      "code": "barometer_unavailable",
+      "severity": "warning",
+      "message": "Barometer data unavailable",
+      "active": true,
+      "observed_value": null,
+      "created_at": "2026-10-12T18:44:08.103607Z"
+    },
+    {
+      "id": "cf701fc2-bffa-4e92-9ce2-c3ec4624e757",
+      "device_id": "sim-hub",
+      "code": "i2c_errors",
+      "severity": "warning",
+      "message": "Device reports 1 I2C errors",
+      "active": true,
+      "observed_value": 1,
+      "created_at": "2026-10-12T18:44:08.103607Z"
+    },
+    {
+      "id": "f37ff39b-ea6d-4218-b64f-c4bc27ceb564",
+      "device_id": "sim-hub",
+      "code": "i2c_errors",
+      "severity": "info",
+      "message": "No new I2C errors in the recovery window",
+      "active": false,
+      "observed_value": 400,
+      "created_at": "2026-10-12T18:44:00.451945Z"
+    },
+    {
+      "id": "b0490de5-1a60-410c-9ff8-ccd23b9f4db5",
+      "device_id": "sim-hub",
+      "code": "barometer_unavailable",
+      "severity": "info",
+      "message": "Recovered: Barometer data unavailable",
+      "active": false,
+      "observed_value": null,
+      "created_at": "2026-10-12T18:43:59.342534Z"
+    },
+    {
+      "id": "d69bd60a-2188-487a-920f-27c368a3c583",
+      "device_id": "sim-hub",
+      "code": "barometer_unavailable",
+      "severity": "warning",
+      "message": "Barometer data unavailable",
+      "active": true,
+      "observed_value": null,
+      "created_at": "2026-10-12T18:43:54.971534Z"
+    },
+    {
+      "id": "899179f1-ddc8-4f0b-99f1-9a6ee663fe09",
+      "device_id": "sim-hub",
+      "code": "i2c_errors",
+      "severity": "warning",
+      "message": "Device reports 1 I2C errors",
+      "active": true,
+      "observed_value": 1,
+      "created_at": "2026-10-12T18:43:54.971534Z"
+    },
+    {
+      "id": "f22fad20-e421-4fb9-adb6-c51fc7ecb0f4",
+      "device_id": "sim-hub",
+      "code": "i2c_errors",
+      "severity": "info",
+      "message": "No new I2C errors in the recovery window",
+      "active": false,
+      "observed_value": 400,
+      "created_at": "2026-10-12T18:43:47.340022Z"
+    },
+    {
+      "id": "de6db98f-b247-4b30-a07f-4c838b37e88b",
+      "device_id": "sim-hub",
+      "code": "barometer_unavailable",
+      "severity": "info",
+      "message": "Recovered: Barometer data unavailable",
+      "active": false,
+      "observed_value": null,
+      "created_at": "2026-10-12T18:43:46.252818Z"
+    }
+  ]
+}

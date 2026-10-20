@@ -1,0 +1,16 @@
+{
+  "purpose": "verify undefined-behavior instrumentation with deliberately invalid code outside the project sources",
+  "command": [
+    "C:/Users/sr116/Desktop/Resume/Projects/tmp/native-tools/Lib/site-packages/ziglang/zig.exe",
+    "cc",
+    "-fsanitize=undefined",
+    "-fno-sanitize-recover=all",
+    "C:\\Users\\sr116\\Desktop\\Resume\\Projects\\stm32-networked-sensor-system\\build\\sandbox-20261017-rxotbc23\\evidence\\ubsan-control.c",
+    "-o",
+    "C:\\Users\\sr116\\Desktop\\Resume\\Projects\\stm32-networked-sensor-system\\build\\sandbox-20261017-rxotbc23\\evidence\\ubsan-control.exe"
+  ],
+  "returncode": 3,
+  "stdout": "",
+  "stderr": "thread 2584 panic: signed integer overflow: 2147483647 + 1 cannot be represented in type 'int'\nC:\\Users\\sr116\\Desktop\\Resume\\Projects\\tmp\\native-tools\\Lib\\site-packages\\ziglang\\lib\\ubsan_rt.zig:156:20: 0x7ff6e707944e in abort (ubsan_rt.lib)\n            handler(data, lhs_handle, rhs_handle);\n                   ^\nC:\\Users\\sr116\\Desktop\\Resume\\Projects\\stm32-networked-sensor-system\\build\\sandbox-20261017-rxotbc23\\evidence\\ubsan-control.c:2: 0x7ff6e7031049 in main (ubsan-control.obj)\nint main(void) { volatile int a = INT_MAX; volatile int b = a + 1; (void)b; return 0; }\n\nC:\\Users\\sr116\\Desktop\\Resume\\Projects\\tmp\\native-tools\\Lib\\site-packages\\ziglang\\lib\\libc\\mingw\\crt\\crtexe.c:259: 0x7ff6e70313bb in __tmainCRTStartup (crt2.obj)\n    mainret = _tmain (argc, argv, envp);\n\nC:\\Users\\sr116\\Desktop\\Resume\\Projects\\tmp\\native-tools\\Lib\\site-packages\\ziglang\\lib\\libc\\mingw\\crt\\crtexe.c:179: 0x7ff6e703141b in mainCRTStartup (crt2.obj)\n  ret = __tmainCRTStartup ();\n\n???:?:?: 0x7ffecee1dda6 in ??? (KERNEL32.DLL)\n???:?:?: 0x7ffecfbfee4b in ??? (ntdll.dll)\n",
+  "detected": true
+}

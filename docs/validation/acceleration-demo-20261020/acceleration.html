@@ -1,0 +1,294 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>STM32 test report</title><style>body{font:15px system-ui;margin:40px;color:#172b35}table{border-collapse:collapse;width:100%}td,th{border:1px solid #cbd5db;padding:12px;text-align:left;vertical-align:top}pre{white-space:pre-wrap;font-size:12px}h1{color:#087f75}@media print{body{margin:0}tr{break-inside:avoid}}</style><h1>STM32 Sensor Lab test report</h1><p>20261020T173704-c6e8f72f · passed</p><p>Started 2026-10-20T17:37:04.186039+00:00 · ELF SHA256 46598310fdb612481b9822c262aadf6730b7827a6f275a23415122bf34458372</p><p>Renode digital emulation. Physical electrical behavior and sensor accuracy require hardware testing.</p><table><tr><th>Test</th><th>Result</th><th>Expected</th><th>Observed checks</th></tr><tr><td>motion</td><td>passed</td><td>The requested action is confirmed by fresh firmware telemetry.</td><td><pre>[
+  {
+    &quot;name&quot;: &quot;Action observed&quot;,
+    &quot;expected&quot;: &quot;motion&quot;,
+    &quot;actual&quot;: &quot;Verified: Tilt and rotate. Board online; boot 3.&quot;,
+    &quot;passed&quot;: true
+  }
+]</pre></td></tr></table><h2>Full evidence</h2><pre>{
+  &quot;id&quot;: &quot;20261020T173704-c6e8f72f&quot;,
+  &quot;kind&quot;: &quot;manual&quot;,
+  &quot;status&quot;: &quot;passed&quot;,
+  &quot;started_at&quot;: &quot;2026-10-20T17:37:04.186039+00:00&quot;,
+  &quot;finished_at&quot;: &quot;2026-10-20T17:37:04.328916+00:00&quot;,
+  &quot;elf_sha256&quot;: &quot;46598310fdb612481b9822c262aadf6730b7827a6f275a23415122bf34458372&quot;,
+  &quot;run_log&quot;: &quot;C:\\Users\\sr116\\Desktop\\Resume\\Projects\\stm32-networked-sensor-system\\var\\interview\\20261020-102354-888572&quot;,
+  &quot;coverage&quot;: [
+    {
+      &quot;name&quot;: &quot;STM32F401RE Cortex-M4F / FreeRTOS&quot;,
+      &quot;level&quot;: &quot;Functional&quot;,
+      &quot;tests&quot;: [
+        &quot;baseline&quot;,
+        &quot;cadence&quot;,
+        &quot;soak&quot;
+      ],
+      &quot;limit&quot;: &quot;Executes the ARM ELF; throughput is emulated, not a silicon benchmark.&quot;
+    },
+    {
+      &quot;name&quot;: &quot;MPU6050 at 0x68&quot;,
+      &quot;level&quot;: &quot;Register model&quot;,
+      &quot;tests&quot;: [
+        &quot;accel&quot;,
+        &quot;gyro&quot;,
+        &quot;imu_temp&quot;,
+        &quot;imu_limits&quot;,
+        &quot;imu_fault&quot;
+      ],
+      &quot;limit&quot;: &quot;Digital register/driver behavior; no motion physics, drift or noise calibration.&quot;
+    },
+    {
+      &quot;name&quot;: &quot;BMP280 at 0x76&quot;,
+      &quot;level&quot;: &quot;Register model&quot;,
+      &quot;tests&quot;: [
+        &quot;baro_temp&quot;,
+        &quot;altitude&quot;,
+        &quot;baro_fault&quot;
+      ],
+      &quot;limit&quot;: &quot;Compensation and derived altitude; physical accuracy is not modeled.&quot;
+    },
+    {
+      &quot;name&quot;: &quot;I2C1 and sensor recovery&quot;,
+      &quot;level&quot;: &quot;Functional&quot;,
+      &quot;tests&quot;: [
+        &quot;imu_fault&quot;,
+        &quot;baro_fault&quot;,
+        &quot;both_fault&quot;
+      ],
+      &quot;limit&quot;: &quot;Slave removal exercises NACK/timeouts; pull-ups, rise time and wiring require hardware.&quot;
+    },
+    {
+      &quot;name&quot;: &quot;GPIOA/B and RCC&quot;,
+      &quot;level&quot;: &quot;Configuration&quot;,
+      &quot;tests&quot;: [
+        &quot;gpio&quot;,
+        &quot;clocks&quot;
+      ],
+      &quot;limit&quot;: &quot;Used alternate-function registers only; no pin voltage or PLL-lock timing validation.&quot;
+    },
+    {
+      &quot;name&quot;: &quot;TIM2 / NVIC / SysTick / DWT&quot;,
+      &quot;level&quot;: &quot;Functional&quot;,
+      &quot;tests&quot;: [
+        &quot;timer&quot;,
+        &quot;systick&quot;,
+        &quot;cadence&quot;
+      ],
+      &quot;limit&quot;: &quot;Configured interrupts and counters; latency is emulator-dependent.&quot;
+    },
+    {
+      &quot;name&quot;: &quot;SRAM / task stacks / heap&quot;,
+      &quot;level&quot;: &quot;Diagnostic&quot;,
+      &quot;tests&quot;: [
+        &quot;memory&quot;,
+        &quot;soak&quot;
+      ],
+      &quot;limit&quot;: &quot;Checks live RTOS memory margins; not an exhaustive RAM or leak qualification.&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Flash boot journal / UID&quot;,
+      &quot;level&quot;: &quot;Functional&quot;,
+      &quot;tests&quot;: [
+        &quot;flash&quot;,
+        &quot;reboot&quot;
+      ],
+      &quot;limit&quot;: &quot;Retained across MCU resets in a session; no wear, power-cut or journal-reclamation simulation.&quot;
+    },
+    {
+      &quot;name&quot;: &quot;USART2 / transport&quot;,
+      &quot;level&quot;: &quot;Functional&quot;,
+      &quot;tests&quot;: [
+        &quot;uart&quot;,
+        &quot;websocket&quot;
+      ],
+      &quot;limit&quot;: &quot;Model feeds a loopback TCP bridge; physical UART timing and USB cabling need hardware.&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Independent watchdog&quot;,
+      &quot;level&quot;: &quot;Functional&quot;,
+      &quot;tests&quot;: [
+        &quot;watchdog&quot;
+      ],
+      &quot;limit&quot;: &quot;Reset and recovery verified; RCC cause flags are not faithful in this model.&quot;
+    },
+    {
+      &quot;name&quot;: &quot;RTC / PWR / bit-band aliases&quot;,
+      &quot;level&quot;: &quot;Support only&quot;,
+      &quot;tests&quot;: [],
+      &quot;limit&quot;: &quot;Platform support dependencies; no application RTC, sleep or bit-band feature to exercise.&quot;
+    },
+    {
+      &quot;name&quot;: &quot;ADC / SPI / CAN / USB / user LED and button&quot;,
+      &quot;level&quot;: &quot;Not used&quot;,
+      &quot;tests&quot;: [],
+      &quot;limit&quot;: &quot;Not used by this hub firmware; no test or hardware-coverage claim.&quot;
+    }
+  ],
+  &quot;cases&quot;: [
+    {
+      &quot;id&quot;: &quot;motion&quot;,
+      &quot;title&quot;: &quot;motion&quot;,
+      &quot;component&quot;: &quot;Manual demonstration&quot;,
+      &quot;expected&quot;: &quot;The requested action is confirmed by fresh firmware telemetry.&quot;,
+      &quot;method&quot;: &quot;Controlled Renode monitor operation.&quot;,
+      &quot;status&quot;: &quot;passed&quot;,
+      &quot;checks&quot;: [
+        {
+          &quot;name&quot;: &quot;Action observed&quot;,
+          &quot;expected&quot;: &quot;motion&quot;,
+          &quot;actual&quot;: &quot;Verified: Tilt and rotate. Board online; boot 3.&quot;,
+          &quot;passed&quot;: true
+        }
+      ],
+      &quot;started_at&quot;: &quot;2026-10-20T17:37:04.189040+00:00&quot;,
+      &quot;before&quot;: {
+        &quot;schema_version&quot;: 3,
+        &quot;boot_id&quot;: &quot;3&quot;,
+        &quot;device_id&quot;: &quot;stm32-d97822656f7ffa6783d45bbd-0&quot;,
+        &quot;sequence&quot;: 706,
+        &quot;uptime_ms&quot;: 70701,
+        &quot;temperature_c&quot;: 25.08,
+        &quot;pressure_hpa&quot;: 1006.53,
+        &quot;accel_g&quot;: [
+          0.0,
+          0.0,
+          1.0
+        ],
+        &quot;battery_v&quot;: null,
+        &quot;i2c_errors&quot;: 0,
+        &quot;queue_drops&quot;: 0,
+        &quot;watchdog_resets&quot;: null,
+        &quot;firmware&quot;: {
+          &quot;schema_version&quot;: 3,
+          &quot;type&quot;: &quot;telemetry&quot;,
+          &quot;device_id&quot;: &quot;stm32-d97822656f7ffa6783d45bbd-0&quot;,
+          &quot;boot_id&quot;: 3,
+          &quot;frame_seq&quot;: 706,
+          &quot;uptime_ms&quot;: 70701,
+          &quot;seq&quot;: 7140,
+          &quot;ts_us&quot;: 70697000,
+          &quot;sample_present&quot;: true,
+          &quot;sensors&quot;: {
+            &quot;mpu6050&quot;: &quot;online&quot;,
+            &quot;bmp280&quot;: &quot;online&quot;
+          },
+          &quot;imu&quot;: {
+            &quot;accel_g&quot;: [
+              0.0,
+              0.0,
+              1.0
+            ],
+            &quot;gyro_dps&quot;: [
+              0.0,
+              0.0,
+              0.0
+            ],
+            &quot;temperature_c&quot;: 36.53
+          },
+          &quot;baro&quot;: {
+            &quot;temperature_c&quot;: 25.08,
+            &quot;pressure_pa&quot;: 100653.0,
+            &quot;altitude_m&quot;: 56.1
+          },
+          &quot;health&quot;: {
+            &quot;i2c_retries&quot;: 0,
+            &quot;i2c_errors&quot;: 0,
+            &quot;queue_drops&quot;: 0,
+            &quot;deadline_misses&quot;: 0,
+            &quot;watchdog&quot;: &quot;fed&quot;,
+            &quot;watchdog_enabled&quot;: true,
+            &quot;reset_flags&quot;: 234881024
+          },
+          &quot;timing&quot;: {
+            &quot;acquisition_us&quot;: 35,
+            &quot;processing_us&quot;: 7
+          }
+        },
+        &quot;received_at&quot;: &quot;2026-10-20T17:37:04.162920Z&quot;
+      },
+      &quot;after&quot;: {
+        &quot;schema_version&quot;: 3,
+        &quot;boot_id&quot;: &quot;3&quot;,
+        &quot;device_id&quot;: &quot;stm32-d97822656f7ffa6783d45bbd-0&quot;,
+        &quot;sequence&quot;: 707,
+        &quot;uptime_ms&quot;: 70801,
+        &quot;temperature_c&quot;: 25.08,
+        &quot;pressure_hpa&quot;: 1006.53,
+        &quot;accel_g&quot;: [
+          0.5,
+          -0.25,
+          0.75
+        ],
+        &quot;battery_v&quot;: null,
+        &quot;i2c_errors&quot;: 0,
+        &quot;queue_drops&quot;: 0,
+        &quot;watchdog_resets&quot;: null,
+        &quot;firmware&quot;: {
+          &quot;schema_version&quot;: 3,
+          &quot;type&quot;: &quot;telemetry&quot;,
+          &quot;device_id&quot;: &quot;stm32-d97822656f7ffa6783d45bbd-0&quot;,
+          &quot;boot_id&quot;: 3,
+          &quot;frame_seq&quot;: 707,
+          &quot;uptime_ms&quot;: 70801,
+          &quot;seq&quot;: 7150,
+          &quot;ts_us&quot;: 70796000,
+          &quot;sample_present&quot;: true,
+          &quot;sensors&quot;: {
+            &quot;mpu6050&quot;: &quot;online&quot;,
+            &quot;bmp280&quot;: &quot;online&quot;
+          },
+          &quot;imu&quot;: {
+            &quot;accel_g&quot;: [
+              0.5,
+              -0.25,
+              0.75
+            ],
+            &quot;gyro_dps&quot;: [
+              5.0,
+              -20.0,
+              10.0
+            ],
+            &quot;temperature_c&quot;: 36.53
+          },
+          &quot;baro&quot;: {
+            &quot;temperature_c&quot;: 25.08,
+            &quot;pressure_pa&quot;: 100653.0,
+            &quot;altitude_m&quot;: 56.1
+          },
+          &quot;health&quot;: {
+            &quot;i2c_retries&quot;: 0,
+            &quot;i2c_errors&quot;: 0,
+            &quot;queue_drops&quot;: 0,
+            &quot;deadline_misses&quot;: 0,
+            &quot;watchdog&quot;: &quot;fed&quot;,
+            &quot;watchdog_enabled&quot;: true,
+            &quot;reset_flags&quot;: 234881024
+          },
+          &quot;timing&quot;: {
+            &quot;acquisition_us&quot;: 35,
+            &quot;processing_us&quot;: 7
+          }
+        },
+        &quot;received_at&quot;: &quot;2026-10-20T17:37:04.263193Z&quot;
+      },
+      &quot;health&quot;: {
+        &quot;device_id&quot;: &quot;stm32-d97822656f7ffa6783d45bbd-0&quot;,
+        &quot;state&quot;: &quot;online&quot;,
+        &quot;last_seen&quot;: &quot;2026-10-20T17:37:04.263193Z&quot;,
+        &quot;age_seconds&quot;: 0.066,
+        &quot;last_sequence&quot;: 707,
+        &quot;boot_id&quot;: 3,
+        &quot;i2c_errors&quot;: 0,
+        &quot;queue_drops&quot;: 0,
+        &quot;watchdog_resets&quot;: null,
+        &quot;detail&quot;: &quot;telemetry is current&quot;,
+        &quot;boot_id_decimal&quot;: &quot;3&quot;,
+        &quot;sample_age_seconds&quot;: 0.071,
+        &quot;measurement_state&quot;: &quot;current&quot;,
+        &quot;mpu6050&quot;: &quot;online&quot;,
+        &quot;bmp280&quot;: &quot;online&quot;
+      },
+      &quot;finished_at&quot;: &quot;2026-10-20T17:37:04.328916+00:00&quot;,
+      &quot;duration_seconds&quot;: 0.141
+    }
+  ]
+}</pre></html>

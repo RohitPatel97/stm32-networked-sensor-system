@@ -1,0 +1,2 @@
+Boot journal interruption, torn commit, corruption, exhaustion, and v3 formatter checks passed
+Full journal: 6553 slots, 6048 published boots, 505 interrupted writes; no identity reuse; exhaustion failed closed

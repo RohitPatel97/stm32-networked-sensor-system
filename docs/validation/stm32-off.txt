@@ -1,0 +1,15 @@
+[0/1] Re-running CMake...
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: C:/Users/sr116/Desktop/Resume/Projects/stm32-networked-sensor-system/build/stm32
+[1/6] Building C object CMakeFiles/sensor_hub_core.dir/src/boot_counter.c.obj
+[2/6] Building C object CMakeFiles/sensor_hub_core.dir/src/telemetry.c.obj
+[3/6] Building C object target/stm32f401re/CMakeFiles/sensor_hub_firmware.dir/Core/Src/hub_identity.c.obj
+[4/6] Linking C static library libsensor_hub_core.a
+[5/6] Linking C executable target\stm32f401re\sensor_hub_firmware.elf
+Memory region         Used Size  Region Size  %age Used
+           FLASH:       38940 B       384 KB      9.90%
+             RAM:       32464 B        96 KB     33.02%
+   text	   data	    bss	    dec	    hex	filename
+  38448	    480	  31992	  70920	  11508	C:/Users/sr116/Desktop/Resume/Projects/stm32-networked-sensor-system/build/stm32/target/stm32f401re/sensor_hub_firmware.elf
+Firmware layout verified: 38940 flash bytes, 5 vectors, real FreeRTOS symbols

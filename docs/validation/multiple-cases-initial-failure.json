@@ -1,0 +1,64 @@
+{
+  "started_at": "2026-10-12T20:17:57.670555+00:00",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "checks": [
+    {
+      "command": [
+        "../tmp/native-tools/Scripts/ctest.exe",
+        "--test-dir",
+        "build/host",
+        "-C",
+        "Release",
+        "--output-on-failure"
+      ],
+      "returncode": 0,
+      "stdout": "Test project C:/Users/sr116/Desktop/Resume/Projects/stm32-networked-sensor-system/build/host\n    Start 1: boot_and_protocol_tests\n1/4 Test #1: boot_and_protocol_tests ..........   Passed    0.05 sec\n    Start 2: core_unit_tests\n2/4 Test #2: core_unit_tests ..................   Passed    0.06 sec\n    Start 3: simulator_integration_tests\n3/4 Test #3: simulator_integration_tests ......   Passed    1.50 sec\n    Start 4: python_tool_tests\n4/4 Test #4: python_tool_tests ................   Passed    0.48 sec\n\n100% tests passed out of 4\n\nTotal Test time (real) =   2.11 sec\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\sr116\\Desktop\\Resume\\Projects\\stm32-networked-sensor-system\\.venv\\Scripts\\python.exe",
+        "scripts/export_protocol.py",
+        "--check"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\sr116\\Desktop\\Resume\\Projects\\stm32-networked-sensor-system\\.venv\\Scripts\\python.exe",
+        "scripts/generate_fixture.py",
+        "C:\\Users\\sr116\\Desktop\\Resume\\Projects\\stm32-networked-sensor-system\\build\\host\\sensor_hub_sim.exe",
+        "--check"
+      ],
+      "returncode": 0,
+      "stdout": "Shared fixture verified\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\sr116\\Desktop\\Resume\\Projects\\stm32-networked-sensor-system\\.venv\\Scripts\\python.exe",
+        "-m",
+        "ruff",
+        "check",
+        "gateway"
+      ],
+      "returncode": 0,
+      "stdout": "All checks passed!\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\sr116\\Desktop\\Resume\\Projects\\stm32-networked-sensor-system\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "returncode": 1,
+      "stdout": "........................................................................ [ 31%]\n........................................................................ [ 63%]\n......................................................F................. [ 95%]\n..........                                                               [100%]\n================================== FAILURES ===================================\n_________ test_compiled_c_to_http_websocket_and_production_dashboard __________\n\nbinary = WindowsPath('C:/Users/sr116/Desktop/Resume/Projects/stm32-networked-sensor-system/build/host/sensor_hub_sim.exe')\ntmp_path = WindowsPath('C:/Users/sr116/AppData/Local/Temp/pytest-of-sr116/pytest-11/test_compiled_c_to_http_websoc0')\n\n    def test_compiled_c_to_http_websocket_and_production_dashboard(binary, tmp_path):\n        source = FirmwareSource(\n            binary,\n            (\n                \"--duration-ms\",\n                \"3000\",\n                \"--disconnect\",\n                \"bmp\",\n                \"--disconnect-at-ms\",\n                \"500\",\n                \"--reconnect-at-ms\",\n                \"1500\",\n            ),\n            rate_hz=100,\n        )\n        events = []\n        with TestClient(create_app(Settings(log_dir=tmp_path), source)) as client:\n            assert \"Firmware diagnostics\" in client.get(\"/\").text\n            assert \"function renderReading\" in client.get(\"/static/app.js\").text\n            with client.websocket_connect(\"/ws/telemetry\") as ws:\n                assert ws.receive_json()[\"type\"] == \"snapshot\"\n                while True:\n                    event = ws.receive_json()\n                    if event[\"type\"] == \"telemetry\":\n                        events.append(event)\n                        if event[\"reading\"][\"sequence\"] == 29:\n                            break\n            wait_finished(client)\n            readings = client.get(\"/api/v1/devices/sim-hub/readings\").json()\n            stats = client.get(\"/api/v1/stats\").json()\n            assert stats[\"frames_accepted\"] == 30 and stats[\"parse_errors\"] == 0\n            assert stats[\"sequence_anomalies\"] == 0\n            assert len(readings) == 30\n            assert any(\n                r[\"pressure_hpa\"] is None and r[\"accel_g\"] is not None for r in readings\n            )\n            assert readings[-1][\"pressure_hpa\"] is not None\n            assert readings[-1][\"i2c_errors\"] > 0  # Cumulative totals survive recovery.\n            assert client.get(\"/api/v1/devices/sim-hub\").json()[\"state\"] == \"online\"\n            alerts = client.get(\"/api/v1/alerts\").json()\n            for code in (\"barometer_unavailable\", \"i2c_errors\"):\n                assert {a[\"active\"] for a in alerts if a[\"code\"] == code} == {True, False}\n            assert (\n                client.post(\"/api/v1/simulator/fault\", json={\"mode\": \"normal\"}).status_code\n                == 409\n            )\n        # Exercise the actual frontend script with actual received WebSocket events.\n        result = subprocess.run(\n            [\"node\", str(ROOT / \"tests/dashboard.cjs\")],\n            check=False,\n            input=json.dumps(events),\n            text=True,\n            capture_output=True,\n            timeout=10,\n        )\n>       assert result.returncode == 0, result.stdout + result.stderr\nE       AssertionError: node:internal/assert/utils:77\nE             throw err;\nE             ^\nE         \nE         AssertionError [ERR_ASSERTION]: must render both missing values and subsequent recovery\nE             at Object.<anonymous> (C:\\Users\\sr116\\Desktop\\Resume\\Projects\\stm32-networked-sensor-system\\tests\\dashboard.cjs:37:1)\nE             at Module._compile (node:internal/modules/cjs/loader:1872:14)\nE             at Object..js (node:internal/modules/cjs/loader:2003:10)\nE             at Module.load (node:internal/modules/cjs/loader:1594:32)\nE             at Module._load (node:internal/modules/cjs/loader:1396:12)\nE             at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)\nE             at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\nE             at node:internal/main/run_main_module:33:47 {\nE           generatedMessage: false,\nE           code: 'ERR_ASSERTION',\nE           actual: false,\nE           expected: true,\nE           operator: '==',\nE           diff: 'simple'\nE         }\nE         \nE         Node.js v24.19.0\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['node', 'C:\\\\Users\\\\sr116\\\\Desktop\\\\Resume\\\\Projects\\\\stm32-networked-sensor-system\\\\tests\\\\das...: 'ERR_ASSERTION',\\n  actual: false,\\n  expected: true,\\n  operator: '==',\\n  diff: 'simple'\\n}\\n\\nNode.js v24.19.0\\n\").returncode\n\ntests\\integration\\test_system.py:101: AssertionError\n---------------------------- Captured stderr call -----------------------------\n2026-10-12T13:18:02-0700 INFO sensor_monitor.hub telemetry acquisition started\n2026-10-12T13:18:02-0700 INFO httpx HTTP Request: GET http://testserver/ \"HTTP/1.1 200 OK\"\n2026-10-12T13:18:02-0700 INFO httpx HTTP Request: GET http://testserver/static/app.js \"HTTP/1.1 200 OK\"\n2026-10-12T13:18:02-0700 INFO sensor_monitor.hub telemetry acquisition stopped\n2026-10-12T13:18:02-0700 INFO httpx HTTP Request: GET http://testserver/healthz \"HTTP/1.1 503 Service Unavailable\"\n2026-10-12T13:18:02-0700 INFO httpx HTTP Request: GET http://testserver/api/v1/devices/sim-hub/readings \"HTTP/1.1 200 OK\"\n2026-10-12T13:18:02-0700 INFO httpx HTTP Request: GET http://testserver/api/v1/stats \"HTTP/1.1 200 OK\"\n2026-10-12T13:18:02-0700 INFO httpx HTTP Request: GET http://testserver/api/v1/devices/sim-hub \"HTTP/1.1 200 OK\"\n2026-10-12T13:18:02-0700 INFO httpx HTTP Request: GET http://testserver/api/v1/alerts \"HTTP/1.1 200 OK\"\n2026-10-12T13:18:02-0700 INFO httpx HTTP Request: POST http://testserver/api/v1/simulator/fault \"HTTP/1.1 409 Conflict\"\n------------------------------ Captured log call ------------------------------\nINFO     sensor_monitor.hub:hub.py:56 telemetry acquisition started\nINFO     httpx:_client.py:1025 HTTP Request: GET http://testserver/ \"HTTP/1.1 200 OK\"\nINFO     httpx:_client.py:1025 HTTP Request: GET http://testserver/static/app.js \"HTTP/1.1 200 OK\"\nINFO     sensor_monitor.hub:hub.py:97 telemetry acquisition stopped\nINFO     httpx:_client.py:1025 HTTP Request: GET http://testserver/healthz \"HTTP/1.1 503 Service Unavailable\"\nINFO     httpx:_client.py:1025 HTTP Request: GET http://testserver/api/v1/devices/sim-hub/readings \"HTTP/1.1 200 OK\"\nINFO     httpx:_client.py:1025 HTTP Request: GET http://testserver/api/v1/stats \"HTTP/1.1 200 OK\"\nINFO     httpx:_client.py:1025 HTTP Request: GET http://testserver/api/v1/devices/sim-hub \"HTTP/1.1 200 OK\"\nINFO     httpx:_client.py:1025 HTTP Request: GET http://testserver/api/v1/alerts \"HTTP/1.1 200 OK\"\nINFO     httpx:_client.py:1025 HTTP Request: POST http://testserver/api/v1/simulator/fault \"HTTP/1.1 409 Conflict\"\n============================== warnings summary ===============================\n.venv\\Lib\\site-packages\\fastapi\\testclient.py:1\n  C:\\Users\\sr116\\Desktop\\Resume\\Projects\\stm32-networked-sensor-system\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ===========================\nFAILED tests/integration/test_system.py::test_compiled_c_to_http_websocket_and_production_dashboard\n1 failed, 225 passed, 1 warning in 2.16s\n",
+      "stderr": ""
+    }
+  ]
+}

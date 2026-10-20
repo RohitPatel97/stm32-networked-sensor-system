@@ -1,0 +1,80 @@
+FF                                                                       [100%]
+================================== FAILURES ===================================
+_____________ test_discarded_apps_release_hubs_and_sources[False] _____________
+
+tmp_path = WindowsPath('C:/Users/sr116/AppData/Local/Temp/pytest-of-sr116/pytest-32/test_discarded_apps_release_hu0')
+start_server = False
+
+    @pytest.mark.parametrize("start_server", [False, True])
+    def test_discarded_apps_release_hubs_and_sources(tmp_path, start_server) -> None:
+        references = []
+        for _ in range(3):
+            application = create_app(Settings(log_dir=tmp_path))
+            references.extend(weakref.ref(obj) for obj in (
+                application, application.state.hub, application.state.source,
+            ))
+            if start_server:
+                with TestClient(application) as client:
+                    assert client.get("/healthz").status_code == 200
+                del client
+            del application
+        gc.collect()
+>       assert all(reference() is None for reference in references)
+E       assert False
+E        +  where False = all(<generator object test_discarded_apps_release_hubs_and_sources.<locals>.<genexpr> at 0x000001E93D1D9FF0>)
+
+gateway\tests\test_api.py:84: AssertionError
+_____________ test_discarded_apps_release_hubs_and_sources[True] ______________
+
+tmp_path = WindowsPath('C:/Users/sr116/AppData/Local/Temp/pytest-of-sr116/pytest-32/test_discarded_apps_release_hu1')
+start_server = True
+
+    @pytest.mark.parametrize("start_server", [False, True])
+    def test_discarded_apps_release_hubs_and_sources(tmp_path, start_server) -> None:
+        references = []
+        for _ in range(3):
+            application = create_app(Settings(log_dir=tmp_path))
+            references.extend(weakref.ref(obj) for obj in (
+                application, application.state.hub, application.state.source,
+            ))
+            if start_server:
+                with TestClient(application) as client:
+                    assert client.get("/healthz").status_code == 200
+                del client
+            del application
+        gc.collect()
+>       assert all(reference() is None for reference in references)
+E       assert False
+E        +  where False = all(<generator object test_discarded_apps_release_hubs_and_sources.<locals>.<genexpr> at 0x000001E93D1D9FF0>)
+
+gateway\tests\test_api.py:84: AssertionError
+---------------------------- Captured stderr call -----------------------------
+2026-10-17T12:04:22-0700 INFO sensor_monitor.hub telemetry acquisition started
+2026-10-17T12:04:22-0700 INFO httpx HTTP Request: GET http://testserver/healthz "HTTP/1.1 200 OK"
+2026-10-17T12:04:22-0700 INFO sensor_monitor.hub telemetry acquisition stopped
+2026-10-17T12:04:22-0700 INFO sensor_monitor.hub telemetry acquisition started
+2026-10-17T12:04:22-0700 INFO httpx HTTP Request: GET http://testserver/healthz "HTTP/1.1 200 OK"
+2026-10-17T12:04:22-0700 INFO sensor_monitor.hub telemetry acquisition stopped
+2026-10-17T12:04:22-0700 INFO sensor_monitor.hub telemetry acquisition started
+2026-10-17T12:04:22-0700 INFO httpx HTTP Request: GET http://testserver/healthz "HTTP/1.1 200 OK"
+2026-10-17T12:04:22-0700 INFO sensor_monitor.hub telemetry acquisition stopped
+------------------------------ Captured log call ------------------------------
+INFO     sensor_monitor.hub:hub.py:56 telemetry acquisition started
+INFO     httpx:_client.py:1025 HTTP Request: GET http://testserver/healthz "HTTP/1.1 200 OK"
+INFO     sensor_monitor.hub:hub.py:97 telemetry acquisition stopped
+INFO     sensor_monitor.hub:hub.py:56 telemetry acquisition started
+INFO     httpx:_client.py:1025 HTTP Request: GET http://testserver/healthz "HTTP/1.1 200 OK"
+INFO     sensor_monitor.hub:hub.py:97 telemetry acquisition stopped
+INFO     sensor_monitor.hub:hub.py:56 telemetry acquisition started
+INFO     httpx:_client.py:1025 HTTP Request: GET http://testserver/healthz "HTTP/1.1 200 OK"
+INFO     sensor_monitor.hub:hub.py:97 telemetry acquisition stopped
+============================== warnings summary ===============================
+.venv\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\sr116\Desktop\Resume\Projects\stm32-networked-sensor-system\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED gateway\tests\test_api.py::test_discarded_apps_release_hubs_and_sources[False]
+FAILED gateway\tests\test_api.py::test_discarded_apps_release_hubs_and_sources[True]
+2 failed, 3 deselected, 1 warning in 0.69s
